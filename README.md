@@ -77,6 +77,7 @@ Planned and/or in-progress reference tooling:
 - `examples/` — sample files, manifests, reconstruction objects, vectors
 - `assets/` — diagrams, branding, screenshots
 - `research/` — research notes and future carrier ideas
+- `site/` — website source code and assets
 - `tools/` — other repo and validation scripts
 
 ## Project status
@@ -98,14 +99,13 @@ The initial focus is:
 
 ## Author
 
-**Germán Abal**  
-g@evvm.org
+**Germán Abal** — [@ariutokintumi](https://x.com/ariutokintumi) — g@evvm.org — code, architecture, implementation
 
 ## Contributors
 
-- Ben Dumoulin — early PoC implementation support
-- R. Benson Evans — early PoC research support
-- Eduardo — early PoC design support
+- Ben Dumoulin — [@BenDumoulin](https://x.com/BenDumoulin) — early PoC implementation support
+- R. Benson Evans — [@iglobecreator](https://x.com/iglobecreator) — early PoC research support
+- Eduardo — [@metaversearchi_](https://x.com/metaversearchi_) — early PoC design support
 
 ## License
 
