@@ -62,10 +62,10 @@ def reconstruct_hidden_state(
             raise ReconstructionError("A fragment entry is not a JSON object.")
 
         try:
-            start = int(fragment["source_offset"])
+            start = int(fragment["offset"])
             length = int(fragment["length"])
             order = int(fragment["order"])
-            cipher_suite = str(fragment["cipher_suite"])
+            cipher_suite = str(fragment["crypto_suite"])
             iv_b64url = str(fragment["iv_b64url"])
         except KeyError as exc:
             raise ReconstructionError(f"A fragment is missing a required field: {exc}") from exc
@@ -95,7 +95,8 @@ def reconstruct_hidden_state(
     )
 
     output_name = (
-        reconstruction.get("expected_output", {}).get("filename")
+        reconstruction.get("state_filename")
+        or reconstruction.get("expected_output", {}).get("filename")
         or f"{safe_filename(str(state_id))}.bin"
     )
     output_path = out_dir / output_name

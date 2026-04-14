@@ -21,15 +21,17 @@ def new_id(prefix: str) -> str:
 
 
 def sha256_bytes(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
+    """Return SHA-256 digest as base64url without padding (spec Section 7.6)."""
+    return b64url_encode(hashlib.sha256(data).digest())
 
 
 def sha256_file(path: Path) -> str:
+    """Return SHA-256 digest as base64url without padding (spec Section 7.6)."""
     hasher = hashlib.sha256()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             hasher.update(chunk)
-    return hasher.hexdigest()
+    return b64url_encode(hasher.digest())
 
 
 def b64url_encode(data: bytes) -> str:

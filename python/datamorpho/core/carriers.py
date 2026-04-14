@@ -5,17 +5,18 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from .constants import (
-    CHUNK_WRAP,
-    JPEG_MAGIC,
+    DMB_FLAGS,
+    DMB_FIXED_HEADER_SIZE,
+    DMB_MAGIC,
+    DMB_MANIFEST_ENCODING,
+    DMB_RESERVED,
+    DMB_VERSION,
+    SPEC_VERSION,
     TXT_BEGIN_MARKER,
     TXT_END_MARKER,
-    TXT_MANIFEST_BEGIN,
-    TXT_MANIFEST_END,
-    TXT_PAYLOAD_BEGIN,
-    TXT_PAYLOAD_END,
 )
 from .exceptions import CarrierError
-from .utils import b64std_decode, b64std_encode, json_dumps_canonical
+from .utils import b64url_decode, b64url_encode, json_dumps_canonical
 
 
 @dataclass(slots=True)
@@ -42,7 +43,7 @@ def _find_first_jpeg_eoi(base_bytes: bytes) -> int:
 def ensure_jpeg_is_clean(base_bytes: bytes) -> int:
     eoi_index = _find_first_jpeg_eoi(base_bytes)
     trailer = base_bytes[eoi_index + 2 :]
-    if trailer.startswith(JPEG_MAGIC):
+    if trailer.startswith(DMB_MAGIC):
         raise CarrierError("Input JPEG already appears to be Datamorphed.")
     if trailer:
         raise CarrierError(
@@ -55,11 +56,16 @@ def ensure_jpeg_is_clean(base_bytes: bytes) -> int:
 def build_jpeg_carrier(base_bytes: bytes, manifest: dict, payload: bytes) -> bytes:
     ensure_jpeg_is_clean(base_bytes)
     manifest_bytes = json_dumps_canonical(manifest).encode("utf-8")
+    # DMB-0.001 binary block per spec Section 13
     return (
         base_bytes
-        + JPEG_MAGIC
-        + len(manifest_bytes).to_bytes(8, "big")
-        + len(payload).to_bytes(8, "big")
+        + DMB_MAGIC                                     # 4 bytes: "DMOR"
+        + DMB_VERSION                                   # 5 bytes: "0.001"
+        + bytes([DMB_MANIFEST_ENCODING])                # 1 byte:  0x01 (UTF-8 JSON)
+        + bytes([DMB_FLAGS])                            # 1 byte:  0x00
+        + len(manifest_bytes).to_bytes(8, "big")        # 8 bytes: manifest length
+        + len(payload).to_bytes(8, "big")               # 8 bytes: payload length
+        + DMB_RESERVED                                  # 8 bytes: zero
         + manifest_bytes
         + payload
     )
@@ -68,16 +74,23 @@ def build_jpeg_carrier(base_bytes: bytes, manifest: dict, payload: bytes) -> byt
 def parse_jpeg_carrier(carrier_bytes: bytes) -> ParsedCarrier:
     eoi_index = _find_first_jpeg_eoi(carrier_bytes)
     trailer = carrier_bytes[eoi_index + 2 :]
-    if not trailer.startswith(JPEG_MAGIC):
+    if not trailer.startswith(DMB_MAGIC):
         raise CarrierError("The JPEG carrier does not contain a Datamorpho trailer block immediately after the original EOI marker.")
 
-    header_start = len(JPEG_MAGIC)
-    if len(trailer) < header_start + 16:
+    if len(trailer) < DMB_FIXED_HEADER_SIZE:
         raise CarrierError("The JPEG Datamorpho trailer is truncated.")
 
-    manifest_len = int.from_bytes(trailer[header_start : header_start + 8], "big")
-    payload_len = int.from_bytes(trailer[header_start + 8 : header_start + 16], "big")
-    manifest_start = header_start + 16
+    # Validate DMB-0.001 fixed header fields
+    version = trailer[4:9]
+    if version != DMB_VERSION:
+        raise CarrierError(f"Unsupported DMB version: {version!r}")
+
+    # Offsets within the trailer: magic(4) + version(5) + encoding(1) + flags(1) = 11
+    manifest_len = int.from_bytes(trailer[11:19], "big")
+    payload_len = int.from_bytes(trailer[19:27], "big")
+    # reserved bytes at 27:35 -- ignored per spec
+
+    manifest_start = DMB_FIXED_HEADER_SIZE
     manifest_end = manifest_start + manifest_len
     payload_end = manifest_end + payload_len
     if payload_end > len(trailer):
@@ -106,16 +119,21 @@ def ensure_txt_is_clean(base_text: str) -> None:
 def build_txt_carrier(base_text: str, manifest: dict, payload: bytes, encoding: str) -> bytes:
     ensure_txt_is_clean(base_text)
     manifest_json = json.dumps(manifest, indent=2, ensure_ascii=True)
-    payload_b64 = b64std_encode(payload, wrap=CHUNK_WRAP)
+    payload_b64url = b64url_encode(payload)
+    # DTE-0.001 envelope per spec Section 14
     block = (
         "\n\n\n"
         f"{TXT_BEGIN_MARKER}\n"
-        f"{TXT_MANIFEST_BEGIN}\n"
+        f"Datamorpho-Version: {SPEC_VERSION}\n"
+        f"Carrier-Profile: {TXT_PROFILE}\n"
+        "Manifest-Encoding: json-utf8\n"
+        "Payload-Encoding: base64url\n"
+        f"Manifest-Length: {len(manifest_json.encode('utf-8'))}\n"
+        f"Payload-Length: {len(payload)}\n"
+        "\n"
         f"{manifest_json}\n"
-        f"{TXT_MANIFEST_END}\n"
-        f"{TXT_PAYLOAD_BEGIN}\n"
-        f"{payload_b64}\n"
-        f"{TXT_PAYLOAD_END}\n"
+        "\n"
+        f"{payload_b64url}\n"
         f"{TXT_END_MARKER}\n"
     )
     return (base_text + block).encode(encoding)
@@ -125,14 +143,30 @@ def parse_txt_carrier(carrier_bytes: bytes) -> ParsedCarrier:
     encoding = _detect_text_encoding(carrier_bytes)
     text = carrier_bytes.decode(encoding)
 
-    markers = [TXT_BEGIN_MARKER, TXT_MANIFEST_BEGIN, TXT_MANIFEST_END, TXT_PAYLOAD_BEGIN, TXT_PAYLOAD_END, TXT_END_MARKER]
-    if not all(marker in text for marker in markers):
+    if TXT_BEGIN_MARKER not in text or TXT_END_MARKER not in text:
         raise CarrierError("The TXT carrier does not contain a complete Datamorpho envelope.")
 
-    manifest_section = text.split(TXT_MANIFEST_BEGIN, 1)[1].split(TXT_MANIFEST_END, 1)[0].strip()
-    payload_section = text.split(TXT_PAYLOAD_BEGIN, 1)[1].split(TXT_PAYLOAD_END, 1)[0].strip()
+    envelope = text.split(TXT_BEGIN_MARKER, 1)[1].split(TXT_END_MARKER, 1)[0]
+
+    # Split header section (before first blank line) from body
+    parts = envelope.split("\n\n", 1)
+    if len(parts) < 2:
+        raise CarrierError("The TXT Datamorpho envelope is missing the header/body separator.")
+    body = parts[1]
+
+    # Body contains: manifest JSON, blank line, base64url payload
+    body_parts = body.split("\n\n", 1)
+    if len(body_parts) < 2:
+        raise CarrierError("The TXT Datamorpho envelope is missing the manifest/payload separator.")
+
+    manifest_section = body_parts[0].strip()
+    payload_section = body_parts[1].strip()
+    # Remove trailing end marker remnants if any
+    if payload_section.endswith("\n"):
+        payload_section = payload_section.rstrip("\n")
+
     manifest = json.loads(manifest_section)
-    payload = b64std_decode(payload_section)
+    payload = b64url_decode(payload_section)
     return ParsedCarrier(carrier_profile=TXT_PROFILE, manifest=manifest, payload=payload, text_encoding=encoding)
 
 

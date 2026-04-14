@@ -64,7 +64,7 @@ def _build_payload_and_reconstruction(
                     "state_id": state_id,
                     "fragment_id": fragment_id,
                     "order": fragment.order,
-                    "cipher_suite": encrypted.cipher_suite,
+                    "crypto_suite": encrypted.cipher_suite,
                     "ciphertext": encrypted.ciphertext,
                     "iv_b64url": encrypted.iv_b64url,
                     "key_material": encrypted.key_material,
@@ -74,8 +74,9 @@ def _build_payload_and_reconstruction(
             fragment_entries.append(
                 {
                     "fragment_id": fragment_id,
+                    "payload_region": "main",
                     "order": fragment.order,
-                    "cipher_suite": encrypted.cipher_suite,
+                    "crypto_suite": encrypted.cipher_suite,
                     "iv_b64url": encrypted.iv_b64url,
                     "key_material": encrypted.key_material,
                 }
@@ -117,14 +118,23 @@ def _build_payload_and_reconstruction(
     for template in reconstruction_templates:
         for fragment in template["fragments"]:
             start, length = offsets_by_fragment_id[fragment["fragment_id"]]
-            fragment["source_offset"] = start
+            fragment["offset"] = start
             fragment["length"] = length
 
     return bytes(payload), reconstruction_templates
 
 
 def _compute_reconstruction_digest(reconstruction_object: dict[str, Any]) -> str:
-    reconstruction_bytes = json_dumps_canonical(reconstruction_object).encode("utf-8")
+    # Spec Section 7.9: reconstruction_digest MUST be computed after
+    # removing carrier_file_digest and base_file_digest if present.
+    # This prevents circular dependency between file binding and
+    # reconstruction-object binding.
+    filtered = {
+        key: value
+        for key, value in reconstruction_object.items()
+        if key not in ("carrier_file_digest", "base_file_digest")
+    }
+    reconstruction_bytes = json_dumps_canonical(filtered).encode("utf-8")
     return sha256_bytes(reconstruction_bytes)
 
 
@@ -156,26 +166,30 @@ def create_datamorpho(
         layout_strategy=layout_strategy,
     )
 
+    # Placeholder build to detect carrier_profile string (e.g. "jpeg-trailer")
     placeholder_manifest = make_public_manifest(
         carrier_profile="pending",
         layout_strategy=layout_strategy,
         state_entries=[],
     )
-    carrier_profile, carrier_with_placeholder = build_carrier(
+    carrier_profile, _ = build_carrier(
         carrier_kind,
         carrier_bytes,
         placeholder_manifest,
         payload_bytes,
     )
-    placeholder_digest = sha256_bytes(carrier_with_placeholder)
 
+    # Build reconstruction objects with a placeholder carrier digest.
+    # Since _compute_reconstruction_digest excludes carrier_file_digest
+    # (per spec Section 7.9), the reconstruction digests are stable
+    # regardless of the final carrier digest value.
     reconstruction_objects: list[dict[str, Any]] = []
     for template in reconstruction_templates:
         reconstruction_objects.append(
             make_reconstruction_object(
                 carrier_profile=carrier_profile,
                 state_id=template["state_id"],
-                carrier_digest=placeholder_digest,
+                carrier_digest="pending",
                 hidden_file=template["state_path"],
                 layout_strategy=layout_strategy,
                 suite_profile=suite_profile,
@@ -185,14 +199,15 @@ def create_datamorpho(
             )
         )
 
-    # First public manifest pass
+    # Build public state descriptors. Reconstruction digests are now stable
+    # because they exclude carrier_file_digest, so no reconvergence needed.
     public_states = []
     for reconstruction, template in zip(reconstruction_objects, reconstruction_templates, strict=True):
         public_states.append(
             make_public_state_descriptor(
                 state_id=reconstruction["state_id"],
                 hidden_file=template["state_path"],
-                reconstruction_object_digest=_compute_reconstruction_digest(reconstruction),
+                reconstruction_digest=_compute_reconstruction_digest(reconstruction),
             )
         )
 
@@ -202,6 +217,7 @@ def create_datamorpho(
         state_entries=public_states,
     )
 
+    # Build the final carrier and compute its digest
     carrier_profile, final_carrier_bytes = build_carrier(
         carrier_kind,
         carrier_bytes,
@@ -210,36 +226,7 @@ def create_datamorpho(
     )
     final_carrier_digest = sha256_bytes(final_carrier_bytes)
 
-    # Update reconstruction objects with final carrier digest
-    for reconstruction in reconstruction_objects:
-        reconstruction["carrier_file_digest"]["value"] = final_carrier_digest
-
-    # Rebuild public state descriptors with final reconstruction digests
-    final_public_states = []
-    for reconstruction, template in zip(reconstruction_objects, reconstruction_templates, strict=True):
-        final_public_states.append(
-            make_public_state_descriptor(
-                state_id=reconstruction["state_id"],
-                hidden_file=template["state_path"],
-                reconstruction_object_digest=_compute_reconstruction_digest(reconstruction),
-            )
-        )
-
-    final_public_manifest = make_public_manifest(
-        carrier_profile=carrier_profile,
-        layout_strategy=layout_strategy,
-        state_entries=final_public_states,
-    )
-
-    carrier_profile, final_carrier_bytes = build_carrier(
-        carrier_kind,
-        carrier_bytes,
-        final_public_manifest,
-        payload_bytes,
-    )
-    final_carrier_digest = sha256_bytes(final_carrier_bytes)
-
-    # Final consistency pass
+    # Set the final carrier digest in reconstruction objects
     for reconstruction in reconstruction_objects:
         reconstruction["carrier_file_digest"]["value"] = final_carrier_digest
 
@@ -248,7 +235,7 @@ def create_datamorpho(
     write_bytes(output_carrier_path, final_carrier_bytes)
 
     public_manifest_path = out_dir / f"{safe_filename(carrier_path.stem)}.public-manifest.json"
-    json_dump_pretty(final_public_manifest, public_manifest_path)
+    json_dump_pretty(public_manifest, public_manifest_path)
 
     reconstruction_paths: list[Path] = []
     for reconstruction in reconstruction_objects:

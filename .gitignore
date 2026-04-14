@@ -12,6 +12,9 @@ recovered/
 .DS_Store
 Thumbs.db
 
+# Local tool configuration
+.claude/
+
 # Public demo logs
 site/public/creation_tool/logs/
 site/public/reconstruction_tool/logs/
