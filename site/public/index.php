@@ -667,7 +667,7 @@ $year = date('Y');
                 </p>
 
                 <div class="pill-list" aria-label="Key concepts">
-                    <span class="pill">JPEG · TXT · PDF</span>
+                    <span class="pill">JPEG · TXT Demo</span>
                     <span class="pill">Sparse / Sparse-with-Chaff</span>
                     <span class="pill">State-Specific Reconstruction</span>
                     <span class="pill">Cryptographic Agility</span>
@@ -795,7 +795,7 @@ $year = date('Y');
                 <p class="section-kicker">Current carrier profiles</p>
                 <h2 class="section-title">JPEG, TXT, and PDF first</h2>
                 <p class="section-text">
-                    Datamorpho v0.001 focuses on three initial carrier profiles that provide a strong foundation across media, text, and structured documents. The next immediate targets after the first release are audio and video.
+                    Datamorpho v0.001 defines JPEG, TXT, and PDF profiles at the protocol level. The first public demo tooling on Datamorpho.io intentionally supports JPEG and TXT only. Audio and video remain the next immediate targets after the first release.
                 </p>
             </div>
 
@@ -812,7 +812,7 @@ $year = date('Y');
 
                 <article class="card">
                     <h3>PDF</h3>
-                    <p>Datamorpho objects and payload streams appended through a PDF incremental-update section.</p>
+                    <p>Defined in the protocol specification, but intentionally excluded from the first public website demo until a controlled implementation is ready.</p>
                 </article>
             </div>
 
@@ -862,7 +862,7 @@ $year = date('Y');
             <div class="callout" style="margin-top: 1.5rem;">
                 <strong>Important</strong>
                 <p>
-                    The first tooling focus is correctness, usability, and protocol alignment: open-source Python tooling, browser-compatible JavaScript support, and free web utilities.
+                    The first tooling focus is correctness, usability, and protocol alignment: open-source Python tooling first, then browser-compatible JavaScript derived from the tested Python reference implementation. The first website demo scope is JPEG and TXT only.
                 </p>
             </div>
         </div>

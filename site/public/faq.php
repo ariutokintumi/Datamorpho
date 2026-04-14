@@ -50,7 +50,7 @@ $faqItems = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Datamorpho FAQ — Frequently Asked Questions</title>
+    <title>Datamorpho FAQ - Frequently Asked Questions</title>
     <meta name="description" content="Frequently asked questions about Datamorpho, multi-state files, reconstruction objects, carriers, and protocol boundaries.">
     <meta name="theme-color" content="#0f172a">
 

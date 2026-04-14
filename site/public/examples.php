@@ -8,7 +8,7 @@ $year = date('Y');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Datamorpho Examples - Carriers, Reconstruction Objects, and Test Vectors</title>
-    <meta name="description" content="Datamorpho examples for JPEG, TXT, PDF, static metadata reveal patterns, and future interoperability vectors.">
+    <meta name="description" content="Datamorpho examples for JPEG, TXT, protocol-level PDF discussion, static metadata reveal patterns, and future interoperability vectors.">
     <meta name="theme-color" content="#0f172a">
 
     <style>
@@ -499,7 +499,7 @@ $year = date('Y');
                 <p class="section-kicker">Carrier examples</p>
                 <h2 class="section-title">The first four example families</h2>
                 <p class="section-text">
-                    These examples are meant for developers, reviewers, implementers, and anyone trying to understand Datamorpho through practical carrier-specific cases.
+                    These examples are meant for developers, reviewers, implementers, and anyone trying to understand Datamorpho through practical carrier-specific cases. The first public website demo is intentionally limited to JPEG and TXT, while PDF remains documented at the protocol level.
                 </p>
             </div>
 
@@ -522,7 +522,7 @@ $year = date('Y');
 
                 <article class="card">
                     <h3>PDF Example</h3>
-                    <p>A visible PDF with one or more later reconstructable alternate document states.</p>
+                    <p>A protocol-level profile example only for now. PDF is documented in the specification but intentionally excluded from the first website demo implementation.</p>
                     <div class="example-meta">
                         Includes: base PDF, Datamorphed PDF, manifest object, payload stream reference, expected output.
                     </div>

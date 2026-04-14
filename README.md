@@ -43,13 +43,22 @@ A strong example is NFT pre-reveal / reveal without moving metadata, but Datamor
 **Specification version:** `0.001`  
 **Status:** Public Draft
 
-Initial carrier profiles:
+### Protocol-level carrier profiles in the current public materials
 
 - JPEG
 - TXT
 - PDF
 
-Immediate next media targets after first release:
+### First usable reference implementation
+
+The first usable reference implementation currently supports:
+
+- JPEG
+- TXT
+
+PDF is part of the broader protocol discussion and public materials, but it is intentionally not enabled in the first usable implementation.
+
+### Immediate next media targets after the first implementation wave
 
 - Audio
 - Video
@@ -58,48 +67,55 @@ Immediate next media targets after first release:
 
 - [Specification](./docs/specification/Datamorpho-Specification-v0.001.md)
 - [Whitepaper](./docs/whitepaper/Datamorpho-Whitepaper-v0.001.md)
+- [FAQ](./docs/faq/faq.md)
+- [Glossary](./docs/glossary/glossary.md)
 - [Changelog](./CHANGELOG.md)
 
 ## Reference tooling
 
-Planned and/or in-progress reference tooling:
+Current reference tooling in this repository:
 
-- Python file creation tooling
-- Python reconstruction / decrypt / output tooling
-- JavaScript library for browser detection and processing
-- Example files and interoperability vectors
+- Python creator tooling
+- Python reconstruction tooling
+- website pages prepared for future browser-side JavaScript integration
+- tests for the first Python implementation
+
+Planned next:
+
+- browser-side JavaScript library derived from the tested Python reference implementation
+- more examples and interoperability vectors
+- broader carrier support after the first implementation wave is stable
 
 ## Repository structure
 
-- `docs/` — specification, whitepaper, glossary, roadmap, FAQ, diagrams
-- `python/` — Python tooling to create datamorphed files, their re-constructors and for reconstructing them.
-- `js/` — JavaScript/browser library to recognize and process datamorphed JPEGs on any website
-- `examples/` — sample files, manifests, reconstruction objects, vectors
-- `assets/` — diagrams, branding, screenshots
-- `research/` — research notes and future carrier ideas
-- `site/` — website source code and assets
-- `tools/` — other repo and validation scripts
+- `docs/` — specification, whitepaper, FAQ, glossary, and related public materials
+- `python/` — Python reference implementation for creating and reconstructing Datamorphed files
+- `site/` — website source code and public pages
+- `CHANGELOG.md` — public release history
+- `SECURITY.md` — security and reporting guidance
+- `CONTRIBUTING.md` — contribution guidance
+- `Makefile` — convenience commands for install, test, create, reconstruct, and clean
 
 ## Project status
 
 Datamorpho is currently in the **open specification + first tooling** phase.
 
-The initial focus is:
+The current focus is:
 
-1. finalize the specification
-2. publish the whitepaper
-3. release first Python tooling
-4. release first JavaScript/browser library
-5. publish examples and test vectors
+1. keep the specification coherent
+2. keep the whitepaper aligned
+3. stabilize the first Python tooling
+4. prepare the browser-side JavaScript implementation
+5. expand examples and test vectors
 
 ## Discussion
 
-- GitHub Discussions
-- GitHub Issues for specification and implementation issues
+- GitHub Discussions for protocol and design discussion
+- GitHub Issues for concrete specification and implementation issues
 
 ## Author
 
-**Germán Abal** — [@ariutokintumi](https://x.com/ariutokintumi) — g@evvm.org — code, architecture, implementation
+**Germán Abal** — [@ariutokintumi](https://x.com/ariutokintumi) — g@evvm.org
 
 ## Contributors
 

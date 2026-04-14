@@ -1,0 +1,17 @@
+# Python caches and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local outputs
+out/
+recovered/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+
+# Public demo logs
+site/public/creation_tool/logs/
+site/public/reconstruction_tool/logs/

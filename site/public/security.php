@@ -7,7 +7,7 @@ $year = date('Y');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Datamorpho Security — Reporting and Review</title>
+    <title>Datamorpho Security - Reporting and Review</title>
     <meta name="description" content="Datamorpho security page: protocol boundaries, responsible reporting, and review guidance.">
     <meta name="theme-color" content="#0f172a">
 
@@ -262,6 +262,16 @@ $year = date('Y');
     </section>
 
     <section>
+        <div class="container">
+        <div class="callout" style="margin-top: 1.5rem;">
+            <h2>Demo tooling logging policy</h2>
+            <p>When the public create and reconstruct tools go live in browser form, Datamorpho.io will clearly disclose that successful demo-tool use may log original file hashes, result file hashes, and reconstruction objects for security and abuse-response reasons. Users who need privacy should run the open-source tooling locally instead of using the public demo.</p>
+        </div>
+
+        </div>
+    </section>
+
+    <section>
         <div class="container grid-2">
             <article class="card">
                 <h2>When to use public issues</h2>
@@ -283,6 +293,16 @@ $year = date('Y');
             <p>
                 For security-sensitive reports, contact <a href="mailto:g@evvm.org">g@evvm.org</a>. Include a clear description of the issue, affected component, reproduction steps if possible, and why you believe the issue should be handled privately first.
             </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+        <div class="callout" style="margin-top: 1.5rem;">
+            <h2>Demo tooling logging policy</h2>
+            <p>When the public create and reconstruct tools go live in browser form, Datamorpho.io will clearly disclose that successful demo-tool use may log original file hashes, result file hashes, and reconstruction objects for security and abuse-response reasons. Users who need privacy should run the open-source tooling locally instead of using the public demo.</p>
+        </div>
+
         </div>
     </section>
 
