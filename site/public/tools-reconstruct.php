@@ -12,7 +12,7 @@ $year = date('Y');
     <meta name="theme-color" content="#0f172a">
     <style>
         @font-face { font-family: "Unifont"; src: url("/assets/fonts/unifont-17.0.04.otf") format("opentype"); font-display: swap; }
-        :root { --bg:#f6f7f8; --surface:#ffffff; --text:#0f172a; --muted:#475569; --line:#d6dbe3; --accent:#0b57d0; --accent-strong:#083b8a; --accent-soft:#dbeafe; --warning-soft:#fef3c7; --shadow:0 14px 50px rgba(15,23,42,0.08); --font-body:"Unifont","Courier New",monospace; --font-display:"Unifont","Courier New",monospace; --radius:18px; --max:1100px; --space-3:1rem; --space-4:1.25rem; --space-5:1.5rem; --space-6:2rem; --space-7:3rem; --space-8:4rem; }
+        :root { --bg:#f6f7f8; --surface:#ffffff; --text:#0f172a; --muted:#475569; --line:#d6dbe3; --accent:#0b57d0; --accent-strong:#083b8a; --accent-soft:#dbeafe; --warning-soft:#fef3c7; --shadow:0 14px 50px rgba(15,23,42,0.08); --font-body:"Unifont","Courier New",monospace; --font-display:"Unifont","Courier New",monospace; --radius:18px; --max:1180px; --space-3:1rem; --space-4:1.25rem; --space-5:1.5rem; --space-6:2rem; --space-7:3rem; --space-8:4rem; }
         * { box-sizing:border-box; } body { margin:0; background:linear-gradient(180deg,#fbfcfd 0%,#f6f7f8 100%); color:var(--text); font-family:var(--font-body); line-height:1.72; }
         a { color:var(--accent); text-decoration:none; } a:hover { color:var(--accent-strong); text-decoration:underline; }
         .container { width:min(calc(100% - 2rem), var(--max)); margin:0 auto; }

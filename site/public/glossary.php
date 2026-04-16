@@ -107,7 +107,7 @@ $terms = [
             --font-display: "Unifont", "Courier New", monospace;
             --radius: 18px;
             --radius-sm: 12px;
-            --max: 1100px;
+            --max: 1180px;
             --space-2: 0.75rem;
             --space-3: 1rem;
             --space-4: 1.25rem;

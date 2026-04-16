@@ -37,7 +37,7 @@ $year = date('Y');
 
             --radius: 18px;
             --radius-sm: 12px;
-            --max: 1200px;
+            --max: 1180px;
             --space-1: 0.5rem;
             --space-2: 0.75rem;
             --space-3: 1rem;

@@ -1,0 +1,29 @@
+# Caddy site-specific config for datamorpho.io
+#
+# Server location: /etc/caddy/sites/datamorpho.io.caddy
+#   (imported by the global /etc/caddy/Caddyfile via: import /etc/caddy/sites/*.caddy)
+#
+# Deploy:
+#   cp site/datamorpho.io.caddy /etc/caddy/sites/datamorpho.io.caddy
+#   systemctl reload caddy
+#
+# This file is NOT the global Caddyfile. It is the site block only.
+# The global Caddyfile on the server manages TLS, logging, and other vhosts.
+
+www.datamorpho.io {
+  redir https://datamorpho.io{uri} permanent
+}
+
+datamorpho.io {
+  root * /srv/sites/datamorpho.io/public
+  encode zstd gzip
+
+  # Rewrite clean URLs to .php — must come before php_fastcgi.
+  # Without this, php_fastcgi's built-in try_files falls back to index.php
+  # for any path that doesn't match a file on disk (e.g. /specification → index.php).
+  @notfile not file
+  rewrite @notfile {path}.php
+
+  php_fastcgi unix///run/php/php8.4-fpm.sock
+  file_server
+}

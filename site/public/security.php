@@ -32,7 +32,7 @@ $year = date('Y');
             --font-body: "Unifont", "Courier New", monospace;
             --font-display: "Unifont", "Courier New", monospace;
             --radius: 18px;
-            --max: 1100px;
+            --max: 1180px;
             --space-3: 1rem;
             --space-4: 1.25rem;
             --space-5: 1.5rem;
