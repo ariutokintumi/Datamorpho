@@ -47,12 +47,12 @@ $year = date('Y');
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Reconstructor · Demo form · Browser JS coming next</span>
         </a>
         <nav class="nav" aria-label="Primary navigation">
-            <a href="index.php">Home</a><a href="specification.php">Specification</a><a href="whitepaper.php">Whitepaper</a><a href="tools.php">Tools</a><a href="examples.php">Examples</a><a href="community.php" class="nav-cta">Community</a>
+            <a href="/">Home</a><a href="/specification">Specification</a><a href="/whitepaper">Whitepaper</a><a href="/tools">Tools</a><a href="/examples">Examples</a><a href="/community" class="nav-cta">Community</a>
         </nav>
     </div>
 </header>
@@ -66,7 +66,7 @@ $year = date('Y');
             </p>
             <div class="hero-actions">
                 <a class="btn btn-primary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">Reference code on GitHub</a>
-                <a class="btn btn-secondary" href="tools-create.php">Open Creator</a>
+                <a class="btn btn-secondary" href="/tools-create">Open Creator</a>
             </div>
         </div>
     </section>

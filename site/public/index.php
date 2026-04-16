@@ -298,6 +298,28 @@ $year = date('Y');
             font-size: 0.94rem;
         }
 
+        /* Hero panel — dark gradient style */
+        .hero-panel {
+            background: linear-gradient(180deg, #0f172a 0%, #172554 100%);
+            border-color: transparent;
+            color: #fff;
+            padding: var(--space-6);
+        }
+        .hero-panel h2 {
+            color: #fff;
+        }
+        .hero-panel p {
+            color: rgba(255,255,255,0.84);
+        }
+        .hero-list {
+            color: rgba(255,255,255,0.9);
+        }
+        .hero-panel .tool-banner {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.78);
+        }
+
         section {
             padding: var(--space-8) 0;
         }
@@ -627,7 +649,7 @@ $year = date('Y');
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Multi-state files for controlled disclosure</span>
         </a>
@@ -635,11 +657,11 @@ $year = date('Y');
         <nav class="nav" aria-label="Primary navigation">
             <a href="#what">What it is</a>
             <a href="#profiles">Profiles</a>
-            <a href="#tools">Tools</a>
             <a href="#developers">For developers</a>
-            <a href="specification.php">Specification</a>
-            <a href="whitepaper.php">Whitepaper</a>
-            <a href="community.php" class="nav-cta">Community</a>
+            <a href="/specification">Specification</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/community">Community</a>
+            <a href="#tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -657,8 +679,8 @@ $year = date('Y');
                 </p>
 
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="specification.php">Read the Specification</a>
-                    <a class="btn btn-secondary" href="whitepaper.php">Open the Whitepaper</a>
+                    <a class="btn btn-primary" href="/specification">Read the Specification</a>
+                    <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
                     <a class="btn btn-secondary" href="#tools">Use the Tools</a>
                 </div>
 
@@ -676,22 +698,22 @@ $year = date('Y');
             </div>
 
             <aside class="hero-panel" aria-label="Quick overview">
-                <h2>What people should understand first</h2>
+                <h2>What you should understand first</h2>
                 <p>
-                    Datamorpho is not a metadata swap trick and not steganography. A Datamorphed file openly declares that hidden states exist and indicates where reconstruction information may later be found.
+                    This is not steganography and not a metadata trick. A Datamorphed file openly tells you that hidden states exist inside it — and where to look for the reconstruction information when the time comes.
                 </p>
 
                 <ul class="hero-list">
-                    <li>Valid ordinary file first</li>
-                    <li>Public manifest for discoverability</li>
-                    <li>Concealed payload for latent states</li>
-                    <li>Secret-bearing reconstruction object per hidden state</li>
+                    <li>Still a valid, ordinary file</li>
+                    <li>Public manifest anyone can inspect</li>
+                    <li>Concealed payload for future states</li>
+                    <li>Separate reconstruction object per hidden state</li>
                 </ul>
 
                 <div class="tool-banner">
-                    <strong>For users:</strong> many visitors will come here to create or reconstruct files with the free tooling.<br>
-                    <strong>For journalists:</strong> the first fold explains the concept quickly.<br>
-                    <strong>For developers:</strong> deeper sections below expose the technical model.
+                    <strong>Just want to try it?</strong> Use the free creator and reconstructor tools above.<br>
+                    <strong>Writing about it?</strong> The overview section below explains the concept clearly.<br>
+                    <strong>Building on it?</strong> Dig into the specification and the developer section.
                 </div>
             </aside>
         </div>
@@ -838,7 +860,7 @@ $year = date('Y');
                     <h3>Creator</h3>
                     <p>Create Datamorphed files from supported carrier formats using public manifests, payload layout strategy, and reconstruction objects.</p>
                     <div class="section-actions">
-                        <a class="btn btn-primary" href="tools-create.php">Open Creator</a>
+                        <a class="btn btn-primary" href="/tools-create">Open Creator</a>
                     </div>
                 </article>
 
@@ -846,7 +868,7 @@ $year = date('Y');
                     <h3>Reconstructor</h3>
                     <p>Load a carrier file and a reconstruction object to reconstruct one hidden state and export the recovered output.</p>
                     <div class="section-actions">
-                        <a class="btn btn-primary" href="tools-reconstruct.php">Open Reconstructor</a>
+                        <a class="btn btn-primary" href="/tools-reconstruct">Open Reconstructor</a>
                     </div>
                 </article>
 
@@ -854,7 +876,7 @@ $year = date('Y');
                     <h3>MorphoStorage</h3>
                     <p>A future infrastructure layer for hosting or retrieving reconstruction-related data where appropriate, including IPFS-aligned flows.</p>
                     <div class="section-actions">
-                        <a class="btn btn-secondary" href="roadmap.php">Coming Soon</a>
+                        <a class="btn btn-secondary" href="/roadmap">Coming Soon</a>
                     </div>
                 </article>
             </div>
@@ -961,9 +983,9 @@ $year = date('Y');
             </div>
 
             <div class="section-actions">
-                <a class="btn btn-primary" href="specification.php">Read the Specification</a>
-                <a class="btn btn-secondary" href="whitepaper.php">Read the Whitepaper</a>
-                <a class="btn btn-secondary" href="examples.php">View Examples</a>
+                <a class="btn btn-primary" href="/specification">Read the Specification</a>
+                <a class="btn btn-secondary" href="/whitepaper">Read the Whitepaper</a>
+                <a class="btn btn-secondary" href="/examples">View Examples</a>
             </div>
 
             <div class="placeholder" role="note" aria-label="Diagram placeholder">
@@ -1001,7 +1023,7 @@ $year = date('Y');
 
                 <article class="card soft">
                     <h3>Static Metadata Reveal Pattern</h3>
-                    <p>A Datamorphed JPEG and Datamorphed metadata file working together without moving the public metadata location.</p>
+                    <p>A Datamorphed JPEG and Datamorphed metadata file working together without moving the public metadata location. A natural fit for NFT-style assets and on-chain pointer patterns where the public metadata URL must stay fixed.</p>
                 </article>
             </div>
 
@@ -1011,7 +1033,7 @@ $year = date('Y');
             </div>
 
             <div class="section-actions">
-                <a class="btn btn-secondary" href="examples.php">View Examples</a>
+                <a class="btn btn-secondary" href="/examples">View Examples</a>
             </div>
         </div>
     </section>
@@ -1045,8 +1067,8 @@ $year = date('Y');
 
             <div class="section-actions">
                 <a class="btn btn-primary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                <a class="btn btn-secondary" href="community.php">Join the Discussion</a>
-                <a class="btn btn-secondary" href="donate.php">Support the Project</a>
+                <a class="btn btn-secondary" href="/community">Join the Discussion</a>
+                <a class="btn btn-secondary" href="/donate">Support the Project</a>
             </div>
         </div>
     </section>
@@ -1080,16 +1102,24 @@ $year = date('Y');
                 </div>
                 <div class="roadmap-item">
                     <strong>Phase 5</strong>
-                    <span>Audio and video carrier support.</span>
+                    <span>PDF carrier support.</span>
                 </div>
                 <div class="roadmap-item">
                     <strong>Phase 6</strong>
+                    <span>MorphoStorage infrastructure.</span>
+                </div>
+                <div class="roadmap-item">
+                    <strong>Phase 7</strong>
+                    <span>Audio and video carrier support.</span>
+                </div>
+                <div class="roadmap-item">
+                    <strong>Phase 8</strong>
                     <span>Expanded infrastructure, interoperability, and broader standardization work.</span>
                 </div>
             </div>
 
             <div class="section-actions">
-                <a class="btn btn-secondary" href="roadmap.php">View Full Roadmap</a>
+                <a class="btn btn-secondary" href="/roadmap">View Full Roadmap</a>
             </div>
         </div>
     </section>
@@ -1107,26 +1137,20 @@ $year = date('Y');
             <div class="grid-4">
                 <article class="card">
                     <h3>GitHub</h3>
-                    <p>Source code, documentation, and collaborative development.</p>
+                    <p>Source code, documentation, and collaborative development. <a href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">View on GitHub →</a></p>
                 </article>
                 <article class="card">
                     <h3>Discussions</h3>
-                    <p>Protocol questions, design conversations, and community review.</p>
+                    <p>Protocol questions, design conversations, and community review. <a href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Open Discussions →</a></p>
                 </article>
                 <article class="card">
                     <h3>Announcements</h3>
-                    <p>Project updates, releases, and public communications.</p>
+                    <p>Project updates, releases, and public communications. <a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Follow on X →</a></p>
                 </article>
                 <article class="card">
                     <h3>Contact</h3>
                     <p>For serious inquiries, collaborations, or media questions, write to <a href="mailto:g@evvm.org">g@evvm.org</a>.</p>
                 </article>
-            </div>
-
-            <div class="section-actions">
-                <a class="btn btn-primary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a>
-                <a class="btn btn-secondary" href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a>
             </div>
         </div>
     </section>
@@ -1140,8 +1164,8 @@ $year = date('Y');
                 </p>
 
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="specification.php">Read the Specification</a>
-                    <a class="btn btn-secondary" href="whitepaper.php">Open the Whitepaper</a>
+                    <a class="btn btn-primary" href="/specification">Read the Specification</a>
+                    <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
                     <a class="btn btn-secondary" href="#tools">Try the Tools</a>
                 </div>
             </div>
@@ -1162,12 +1186,12 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>Pages</h3>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="specification.php">Specification</a></li>
-                    <li><a href="whitepaper.php">Whitepaper</a></li>
-                    <li><a href="tools.php">Tools</a></li>
-                    <li><a href="examples.php">Examples</a></li>
-                    <li><a href="roadmap.php">Roadmap</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/specification">Specification</a></li>
+                    <li><a href="/whitepaper">Whitepaper</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                    <li><a href="/roadmap">Roadmap</a></li>
                 </ul>
             </div>
 
@@ -1177,7 +1201,7 @@ $year = date('Y');
                     <li><a href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
                     <li><a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a></li>
-                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="/donate">Donate</a></li>
                     <li><a href="mailto:g@evvm.org">g@evvm.org</a></li>
                 </ul>
             </div>
@@ -1185,10 +1209,10 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>Notes</h3>
                 <ul>
-                    <li><a href="faq.php">FAQ</a></li>
-                    <li><a href="glossary.php">Glossary</a></li>
-                    <li><a href="changelog.php">Changelog</a></li>
-                    <li><a href="security.php">Security</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/glossary">Glossary</a></li>
+                    <li><a href="/changelog">Changelog</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>

@@ -461,18 +461,18 @@ $year = date('Y');
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="https://datamorpho.io/index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Roadmap · phases · next steps</span>
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
-            <a href="https://datamorpho.io/index.php">Home</a>
-            <a href="https://datamorpho.io/specification.php">Specification</a>
-            <a href="https://datamorpho.io/whitepaper.php">Whitepaper</a>
-            <a href="https://datamorpho.io/tools.php">Tools</a>
-            <a href="https://datamorpho.io/examples.php">Examples</a>
-            <a href="https://datamorpho.io/community.php" class="nav-cta">Community</a>
+            <a href="/">Home</a>
+            <a href="/specification">Specification</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/examples">Examples</a>
+            <a href="/community">Community</a>
+            <a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -489,8 +489,8 @@ $year = date('Y');
 
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#phases">View the roadmap phases</a>
-                    <a class="btn btn-secondary" href="https://datamorpho.io/tools.php">Open the Tools</a>
-                    <a class="btn btn-secondary" href="https://datamorpho.io/community.php">Join the Discussion</a>
+                    <a class="btn btn-secondary" href="/tools">Open the Tools</a>
+                    <a class="btn btn-secondary" href="/community">Join the Discussion</a>
                 </div>
             </div>
 
@@ -511,9 +511,9 @@ $year = date('Y');
         <div class="container">
             <div class="section-head">
                 <p class="section-kicker">Phases</p>
-                <h2 class="section-title">The six current roadmap phases</h2>
+                <h2 class="section-title">The eight current roadmap phases</h2>
                 <p class="section-text">
-                    These phases reflect the public plan already introduced in the landing page. They are meant to be practical, sequential enough to guide work, and open enough to evolve with public review.
+                    These phases reflect the public plan already introduced on the landing page. They are meant to be practical, sequential enough to guide work, and open enough to evolve with public review.
                 </p>
             </div>
 
@@ -552,6 +552,22 @@ $year = date('Y');
 
                 <article class="phase">
                     <div class="phase-number">5</div>
+                    <h3>PDF carrier support</h3>
+                    <p>
+                        Add full PDF carrier support to both the reference tooling and the web tools. PDF is already defined at the protocol level in v0.001; this phase delivers the production implementation.
+                    </p>
+                </article>
+
+                <article class="phase">
+                    <div class="phase-number">6</div>
+                    <h3>MorphoStorage infrastructure</h3>
+                    <p>
+                        Build the MorphoStorage layer for hosting, discovery, and retrieval of reconstruction-related data, including IPFS-aligned flows and decentralized storage options.
+                    </p>
+                </article>
+
+                <article class="phase">
+                    <div class="phase-number">7</div>
                     <h3>Audio and video carrier support</h3>
                     <p>
                         Expand beyond JPEG, TXT, and PDF into media-heavy carriers that strongly benefit from early distribution and later reconstruction.
@@ -559,7 +575,7 @@ $year = date('Y');
                 </article>
 
                 <article class="phase">
-                    <div class="phase-number">6</div>
+                    <div class="phase-number">8</div>
                     <h3>Expanded infrastructure, interoperability, and broader standardization work</h3>
                     <p>
                         Strengthen public infrastructure, improve interoperability vectors, refine documentation, and move toward broader open standards discussion as the protocol matures.
@@ -569,7 +585,7 @@ $year = date('Y');
 
             <div class="placeholder">
                 <strong>Diagram placeholder: roadmap timeline</strong>
-                Show the six phases as a clean vertical or horizontal roadmap timeline, suitable for both protocol readers and general visitors.
+                Show the eight phases as a clean vertical or horizontal roadmap timeline, suitable for both protocol readers and general visitors.
             </div>
         </div>
     </section>
@@ -700,9 +716,9 @@ $year = date('Y');
             </div>
 
             <div class="section-actions" style="margin-top: 2rem;">
-                <a class="btn btn-primary" href="https://datamorpho.io/community.php">Join the Discussion</a>
-                <a class="btn btn-secondary" href="https://datamorpho.io/specification.php">Read the Specification</a>
-                <a class="btn btn-secondary" href="https://datamorpho.io/examples.php">View Examples</a>
+                <a class="btn btn-primary" href="/community">Join the Discussion</a>
+                <a class="btn btn-secondary" href="/specification">Read the Specification</a>
+                <a class="btn btn-secondary" href="/examples">View Examples</a>
             </div>
         </div>
     </section>
@@ -721,12 +737,12 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>Pages</h3>
                 <ul>
-                    <li><a href="https://datamorpho.io/index.php">Home</a></li>
-                    <li><a href="https://datamorpho.io/specification.php">Specification</a></li>
-                    <li><a href="https://datamorpho.io/whitepaper.php">Whitepaper</a></li>
-                    <li><a href="https://datamorpho.io/tools.php">Tools</a></li>
-                    <li><a href="https://datamorpho.io/examples.php">Examples</a></li>
-                    <li><a href="https://datamorpho.io/roadmap.php">Roadmap</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/specification">Specification</a></li>
+                    <li><a href="/whitepaper">Whitepaper</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                    <li><a href="/roadmap">Roadmap</a></li>
                 </ul>
             </div>
 
@@ -736,7 +752,7 @@ $year = date('Y');
                     <li><a href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
                     <li><a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a></li>
-                    <li><a href="https://datamorpho.io/donate.php">Donate</a></li>
+                    <li><a href="/donate">Donate</a></li>
                     <li><a href="mailto:g@evvm.org">g@evvm.org</a></li>
                 </ul>
             </div>
@@ -744,10 +760,10 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>More</h3>
                 <ul>
-                    <li><a href="https://datamorpho.io/faq.php">FAQ</a></li>
-                    <li><a href="https://datamorpho.io/glossary.php">Glossary</a></li>
-                    <li><a href="https://datamorpho.io/changelog.php">Changelog</a></li>
-                    <li><a href="https://datamorpho.io/security.php">Security</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/glossary">Glossary</a></li>
+                    <li><a href="/changelog">Changelog</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>

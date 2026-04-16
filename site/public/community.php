@@ -419,18 +419,18 @@ $year = date('Y');
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Community · Discussion · Collaboration</span>
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
-            <a href="index.php">Home</a>
-            <a href="specification.php">Specification</a>
-            <a href="whitepaper.php">Whitepaper</a>
-            <a href="tools.php">Tools</a>
-            <a href="examples.php">Examples</a>
-            <a href="community.php" class="nav-cta">Community</a>
+            <a href="/">Home</a>
+            <a href="/specification">Specification</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/examples">Examples</a>
+            <a href="/community">Community</a>
+            <a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -448,7 +448,7 @@ $year = date('Y');
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a>
-                    <a class="btn btn-secondary" href="donate.php">Support the Project</a>
+                    <a class="btn btn-secondary" href="/donate">Support the Project</a>
                 </div>
             </div>
 
@@ -587,9 +587,9 @@ $year = date('Y');
             </div>
 
             <div class="section-actions" style="margin-top: 2rem;">
-                <a class="btn btn-secondary" href="specification.php">Read the Specification</a>
-                <a class="btn btn-secondary" href="whitepaper.php">Open the Whitepaper</a>
-                <a class="btn btn-secondary" href="examples.php">View Examples</a>
+                <a class="btn btn-secondary" href="/specification">Read the Specification</a>
+                <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
+                <a class="btn btn-secondary" href="/examples">View Examples</a>
             </div>
         </div>
     </section>
@@ -612,7 +612,7 @@ $year = date('Y');
             </div>
 
             <div class="section-actions" style="margin-top: 1.5rem;">
-                <a class="btn btn-primary" href="donate.php">Support the Project</a>
+                <a class="btn btn-primary" href="/donate">Support the Project</a>
                 <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </div>
@@ -632,12 +632,12 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>Pages</h3>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="specification.php">Specification</a></li>
-                    <li><a href="whitepaper.php">Whitepaper</a></li>
-                    <li><a href="tools.php">Tools</a></li>
-                    <li><a href="examples.php">Examples</a></li>
-                    <li><a href="roadmap.php">Roadmap</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/specification">Specification</a></li>
+                    <li><a href="/whitepaper">Whitepaper</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                    <li><a href="/roadmap">Roadmap</a></li>
                 </ul>
             </div>
 
@@ -647,7 +647,7 @@ $year = date('Y');
                     <li><a href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
                     <li><a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a></li>
-                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="/donate">Donate</a></li>
                     <li><a href="mailto:g@evvm.org">g@evvm.org</a></li>
                 </ul>
             </div>
@@ -655,10 +655,10 @@ $year = date('Y');
             <div class="footer-col">
                 <h3>More</h3>
                 <ul>
-                    <li><a href="faq.php">FAQ</a></li>
-                    <li><a href="glossary.php">Glossary</a></li>
-                    <li><a href="changelog.php">Changelog</a></li>
-                    <li><a href="security.php">Security</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/glossary">Glossary</a></li>
+                    <li><a href="/changelog">Changelog</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>

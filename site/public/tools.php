@@ -397,18 +397,18 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Free tooling · JPEG and TXT demo scope</span>
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
-            <a href="index.php">Home</a>
-            <a href="specification.php">Specification</a>
-            <a href="whitepaper.php">Whitepaper</a>
-            <a href="tools.php">Tools</a>
-            <a href="examples.php">Examples</a>
-            <a href="community.php" class="nav-cta">Community</a>
+            <a href="/">Home</a>
+            <a href="/specification">Specification</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/examples">Examples</a>
+            <a href="/community">Community</a>
+            <a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -424,8 +424,8 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
                 </p>
 
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="tools-create.php">Open Creator</a>
-                    <a class="btn btn-secondary" href="tools-reconstruct.php">Open Reconstructor</a>
+                    <a class="btn btn-primary" href="/tools-create">Open Creator</a>
+                    <a class="btn btn-secondary" href="/tools-reconstruct">Open Reconstructor</a>
                     <a class="btn btn-secondary" href="<?php echo htmlspecialchars($repoBase, ENT_QUOTES, 'UTF-8'); ?>/tree/main/python" target="_blank" rel="noopener noreferrer">Python Reference Code</a>
                 </div>
             </div>
@@ -475,7 +475,7 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
                     <h3>Browser JavaScript Layer</h3>
                     <p>Planned next. The future website demo will use browser-side JavaScript derived from the tested Python implementation instead of sending raw file-processing work to the server.</p>
                     <div class="section-actions" style="margin-top:1.25rem;">
-                        <a class="btn btn-secondary" href="roadmap.php">Roadmap</a>
+                        <a class="btn btn-secondary" href="/roadmap">Roadmap</a>
                     </div>
                 </article>
             </div>
@@ -539,7 +539,7 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
                     <h3>Creator page</h3>
                     <p>Carrier input, hidden-state inputs, suite selection, limits, policy acknowledgements, and a placeholder panel for the future browser workflow.</p>
                     <div class="section-actions" style="margin-top:1.25rem;">
-                        <a class="btn btn-primary" href="tools-create.php">Open Creator</a>
+                        <a class="btn btn-primary" href="/tools-create">Open Creator</a>
                     </div>
                 </article>
 
@@ -547,7 +547,7 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
                     <h3>Reconstructor page</h3>
                     <p>Carrier upload, reconstruction object upload, output expectations, demo logging notice, and a placeholder panel for the future browser workflow.</p>
                     <div class="section-actions" style="margin-top:1.25rem;">
-                        <a class="btn btn-primary" href="tools-reconstruct.php">Open Reconstructor</a>
+                        <a class="btn btn-primary" href="/tools-reconstruct">Open Reconstructor</a>
                     </div>
                 </article>
             </div>
@@ -571,12 +571,12 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
             <div class="footer-col">
                 <h3>Pages</h3>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="specification.php">Specification</a></li>
-                    <li><a href="whitepaper.php">Whitepaper</a></li>
-                    <li><a href="tools.php">Tools</a></li>
-                    <li><a href="examples.php">Examples</a></li>
-                    <li><a href="roadmap.php">Roadmap</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/specification">Specification</a></li>
+                    <li><a href="/whitepaper">Whitepaper</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                    <li><a href="/roadmap">Roadmap</a></li>
                 </ul>
             </div>
 
@@ -586,7 +586,7 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
                     <li><a href="<?php echo htmlspecialchars($repoBase, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="<?php echo htmlspecialchars($repoBase, ENT_QUOTES, 'UTF-8'); ?>/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
                     <li><a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a></li>
-                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="/donate">Donate</a></li>
                     <li><a href="mailto:g@evvm.org">g@evvm.org</a></li>
                 </ul>
             </div>
@@ -594,10 +594,10 @@ $repoBase = 'https://github.com/ariutokintumi/datamorpho';
             <div class="footer-col">
                 <h3>More</h3>
                 <ul>
-                    <li><a href="faq.php">FAQ</a></li>
-                    <li><a href="glossary.php">Glossary</a></li>
-                    <li><a href="changelog.php">Changelog</a></li>
-                    <li><a href="security.php">Security</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/glossary">Glossary</a></li>
+                    <li><a href="/changelog">Changelog</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>
