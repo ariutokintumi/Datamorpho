@@ -383,6 +383,15 @@ $year = date('Y');
             border-color: #d8e0ea;
         }
 
+        .diagram {
+            margin-top: var(--space-4);
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
         .placeholder {
             margin-top: var(--space-4);
             padding: var(--space-5);
@@ -757,10 +766,10 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder" role="note" aria-label="Diagram placeholder">
-                <strong>Diagram placeholder: Datamorpho conceptual architecture</strong>
-                Show the relationship between the Base Carrier, Public Manifest, Concealed Payload, Reconstruction Object, and MorphoStorage. Use a clear technical layout suitable for both journalists and developers.
-            </div>
+            <img class="diagram"
+                 src="/assets/diagrams/architecture.svg"
+                 alt="Datamorpho architecture: a Datamorphed File (containing a Base Carrier, Public Manifest, and Concealed Payload) combined with a separately held Reconstruction Object produces the Hidden State output. MorphoStorage is an optional layer for hosting Reconstruction Objects."
+                 width="860" height="210">
         </div>
     </section>
 
