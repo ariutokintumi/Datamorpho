@@ -478,9 +478,9 @@ $year = date('Y');
             <a href="/">Home</a>
             <a href="/specification">Specification</a>
             <a href="/whitepaper">Whitepaper</a>
-            <a href="/tools">Tools</a>
             <a href="/examples">Examples</a>
-            <a href="/community" class="nav-cta">Community</a>
+            <a href="/community">Community</a>
+            <a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -896,7 +896,7 @@ $year = date('Y');
                     <li><a href="/faq">FAQ</a></li>
                     <li><a href="/glossary">Glossary</a></li>
                     <li><a href="/changelog">Changelog</a></li>
-                    <li><a href="https://datamorpho.io/security.php">Security</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>

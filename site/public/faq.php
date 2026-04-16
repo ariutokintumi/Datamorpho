@@ -404,18 +404,18 @@ $faqItems = [
 <body>
 <header class="site-header">
     <div class="container site-header-inner">
-        <a class="brand" href="https://datamorpho.io/index.php" aria-label="Datamorpho home">
+        <a class="brand" href="/" aria-label="Datamorpho home">
             <span class="brand-title">DATAMORPHO</span>
             <span class="brand-subtitle">Frequently asked questions</span>
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
-            <a href="https://datamorpho.io/index.php">Home</a>
-            <a href="https://datamorpho.io/specification.php">Specification</a>
-            <a href="https://datamorpho.io/whitepaper.php">Whitepaper</a>
-            <a href="https://datamorpho.io/tools.php">Tools</a>
-            <a href="https://datamorpho.io/examples.php">Examples</a>
-            <a href="https://datamorpho.io/community.php" class="nav-cta">Community</a>
+            <a href="/">Home</a>
+            <a href="/specification">Specification</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/examples">Examples</a>
+            <a href="/community">Community</a>
+            <a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
@@ -430,9 +430,9 @@ $faqItems = [
             </p>
 
             <div class="hero-actions">
-                <a class="btn btn-primary" href="https://datamorpho.io/specification.php">Read the Specification</a>
-                <a class="btn btn-secondary" href="https://datamorpho.io/whitepaper.php">Open the Whitepaper</a>
-                <a class="btn btn-secondary" href="https://datamorpho.io/community.php">Join the Discussion</a>
+                <a class="btn btn-primary" href="/specification">Read the Specification</a>
+                <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
+                <a class="btn btn-secondary" href="/community">Join the Discussion</a>
             </div>
         </div>
     </section>
@@ -455,9 +455,9 @@ $faqItems = [
                 </p>
 
                 <div class="hero-actions" style="margin-top: 1.5rem;">
-                    <a class="btn btn-primary" href="https://datamorpho.io/specification.php">Read the Specification</a>
-                    <a class="btn btn-secondary" href="https://datamorpho.io/whitepaper.php">Open the Whitepaper</a>
-                    <a class="btn btn-secondary" href="https://datamorpho.io/community.php">Open Community</a>
+                    <a class="btn btn-primary" href="/specification">Read the Specification</a>
+                    <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
+                    <a class="btn btn-secondary" href="/community">Open Community</a>
                 </div>
             </div>
         </div>
@@ -477,12 +477,12 @@ $faqItems = [
             <div class="footer-col">
                 <h3>Pages</h3>
                 <ul>
-                    <li><a href="https://datamorpho.io/index.php">Home</a></li>
-                    <li><a href="https://datamorpho.io/specification.php">Specification</a></li>
-                    <li><a href="https://datamorpho.io/whitepaper.php">Whitepaper</a></li>
-                    <li><a href="https://datamorpho.io/tools.php">Tools</a></li>
-                    <li><a href="https://datamorpho.io/examples.php">Examples</a></li>
-                    <li><a href="https://datamorpho.io/roadmap.php">Roadmap</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/specification">Specification</a></li>
+                    <li><a href="/whitepaper">Whitepaper</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                    <li><a href="/roadmap">Roadmap</a></li>
                 </ul>
             </div>
 
@@ -492,7 +492,7 @@ $faqItems = [
                     <li><a href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://github.com/ariutokintumi/datamorpho/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
                     <li><a href="https://x.com/datamorpho" target="_blank" rel="noopener noreferrer">Announcements</a></li>
-                    <li><a href="https://datamorpho.io/donate.php">Donate</a></li>
+                    <li><a href="/donate">Donate</a></li>
                     <li><a href="mailto:g@evvm.org">g@evvm.org</a></li>
                 </ul>
             </div>
@@ -500,10 +500,10 @@ $faqItems = [
             <div class="footer-col">
                 <h3>More</h3>
                 <ul>
-                    <li><a href="https://datamorpho.io/faq.php">FAQ</a></li>
-                    <li><a href="https://datamorpho.io/glossary.php">Glossary</a></li>
-                    <li><a href="https://datamorpho.io/changelog.php">Changelog</a></li>
-                    <li><a href="https://datamorpho.io/security.php">Security</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/glossary">Glossary</a></li>
+                    <li><a href="/changelog">Changelog</a></li>
+                    <li><a href="/security">Security</a></li>
                 </ul>
             </div>
         </div>

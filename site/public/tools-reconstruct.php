@@ -52,7 +52,7 @@ $year = date('Y');
             <span class="brand-subtitle">Reconstructor · Demo form · Browser JS coming next</span>
         </a>
         <nav class="nav" aria-label="Primary navigation">
-            <a href="/">Home</a><a href="/specification">Specification</a><a href="/whitepaper">Whitepaper</a><a href="/tools">Tools</a><a href="/examples">Examples</a><a href="/community" class="nav-cta">Community</a>
+            <a href="/">Home</a><a href="/specification">Specification</a><a href="/whitepaper">Whitepaper</a><a href="/examples">Examples</a><a href="/community">Community</a><a href="/tools" class="nav-cta">Tools</a>
         </nav>
     </div>
 </header>
