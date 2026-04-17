@@ -147,6 +147,7 @@ def create_datamorpho(
     layout_strategy: str = DEFAULT_LAYOUT,
     max_file_size_bytes: int = 5 * 1024 * 1024,
     max_states: int = 5,
+    morphostorage_text: str = "Accompanying reconstruction object file generated alongside the carrier output.",
 ) -> dict[str, Any]:
     validate_existing_file(carrier_path, max_size_bytes=max_file_size_bytes)
     validate_state_count(state_paths, max_states=max_states)
@@ -208,6 +209,7 @@ def create_datamorpho(
                 state_id=reconstruction["state_id"],
                 hidden_file=template["state_path"],
                 reconstruction_digest=_compute_reconstruction_digest(reconstruction),
+                morphostorage_text=morphostorage_text,
             )
         )
 
@@ -230,7 +232,7 @@ def create_datamorpho(
     for reconstruction in reconstruction_objects:
         reconstruction["carrier_file_digest"]["value"] = final_carrier_digest
 
-    carrier_suffix = ".datamorph.jpg" if carrier_kind == "jpeg" else ".datamorph.txt"
+    carrier_suffix = ".datamorpho.jpg" if carrier_kind == "jpeg" else ".datamorpho.txt"
     output_carrier_path = out_dir / f"{safe_filename(carrier_path.stem)}{carrier_suffix}"
     write_bytes(output_carrier_path, final_carrier_bytes)
 

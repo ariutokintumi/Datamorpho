@@ -102,14 +102,17 @@ python3 -m datamorpho.cli.create \
   --state ./secret2.bin \
   --suite simple \
   --layout sparse-with-chaff \
+  --morphostorage "https://example.com/reconstruction-state-1.json" \
   --out-dir ./out
 ```
+
+`--morphostorage` is optional. It sets the free-text location hint for the reconstruction object that is embedded in the public manifest. Defaults to a generic description if omitted.
 
 ### Reconstruct
 
 ```bash
 python3 -m datamorpho.cli.reconstruct \
-  --carrier ./out/base.datamorph.jpg \
+  --carrier ./out/base.datamorpho.jpg \
   --reconstruction ./out/reconstruction-state-1.json \
   --out-dir ./recovered
 ```
@@ -131,6 +134,35 @@ The reconstructor produces:
 
 - one recovered hidden-state file
 - one reconstruction summary JSON
+
+## Real fixture examples
+
+The repository includes real carrier fixture sets for JPEG and TXT.
+
+### JPEG fixture — `datamorpho/tests/jpg_real_test/`
+
+A four-image set: one base carrier (`1.jpg`) and three hidden states (`2.jpg`, `3.jpg`, `4.jpg`).
+
+```
+jpg_real_test/
+├── 1.jpg                        base JPEG carrier
+├── 2.jpg                        hidden state 1
+├── 3.jpg                        hidden state 2
+├── 4.jpg                        hidden state 3
+└── result/
+    ├── 1.datamorpho.jpg         datamorphed output carrier
+    ├── 1.public-manifest.json   public manifest (embedded copy)
+    ├── reconstruction-state-1.json
+    ├── reconstruction-state-2.json
+    ├── reconstruction-state-3.json
+    ├── 1/ → carrier + RO + reconstructed output for state 1
+    ├── 2/ → carrier + RO + reconstructed output for state 2
+    └── 3/ → carrier + RO + reconstructed output for state 3
+```
+
+Created with `--suite simple --layout sparse-with-chaff --morphostorage "unknown"`.
+
+Each `result/N/` subdirectory is self-contained: it includes a copy of the datamorphed carrier, the matching reconstruction object, and the reconstructed hidden state output.
 
 ## Testing
 

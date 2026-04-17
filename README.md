@@ -86,7 +86,7 @@ PDF is part of the broader protocol discussion and public materials, but it is i
 | Glossary | [glossary.md](./docs/glossary/glossary.md) | [datamorpho.io/glossary](https://datamorpho.io/glossary) |
 | Changelog | [CHANGELOG.md](./CHANGELOG.md) | [datamorpho.io/changelog](https://datamorpho.io/changelog) |
 | Roadmap | — | [datamorpho.io/roadmap](https://datamorpho.io/roadmap) |
-| Examples | — | [datamorpho.io/examples](https://datamorpho.io/examples) |
+| Examples | [JPEG real fixture](./python/datamorpho/tests/jpg_real_test/) | [datamorpho.io/examples](https://datamorpho.io/examples) |
 
 ## Reference tooling
 
@@ -107,6 +107,7 @@ Planned next:
 
 - `docs/` — specification, whitepaper, FAQ, glossary, diagrams, and related public materials
 - `python/` — Python reference implementation for creating and reconstructing Datamorphed files
+  - `python/datamorpho/tests/jpg_real_test/` — real JPEG fixture set (carrier, hidden states, outputs, reconstruction objects)
 - `site/` — website source code and public pages
 - `CHANGELOG.md` — public release history
 - `SECURITY.md` — security and reporting guidance

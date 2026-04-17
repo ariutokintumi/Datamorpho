@@ -42,6 +42,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--out-dir", type=Path, default=Path("./out"), help="Output directory.")
     parser.add_argument("--max-file-size-bytes", type=int, default=DEFAULT_MAX_FILE_SIZE_BYTES)
     parser.add_argument("--max-states", type=int, default=DEFAULT_MAX_STATES)
+    parser.add_argument(
+        "--morphostorage",
+        type=str,
+        default="Accompanying reconstruction object file generated alongside the carrier output.",
+        help="Free-text morphostorage hint embedded in the public manifest (where to find the reconstruction object).",
+    )
     return parser
 
 
@@ -57,6 +63,7 @@ def main() -> int:
             layout_strategy=args.layout,
             max_file_size_bytes=args.max_file_size_bytes,
             max_states=args.max_states,
+            morphostorage_text=args.morphostorage,
         )
     except DatamorphoError as exc:
         print(json.dumps({"ok": False, "error": str(exc)}, ensure_ascii=False), file=sys.stderr)

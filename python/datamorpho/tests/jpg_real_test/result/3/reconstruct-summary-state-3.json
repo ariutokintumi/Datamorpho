@@ -1,0 +1,8 @@
+{
+  "carrier_input": "python\\datamorpho\\tests\\real_test\\result\\3\\1.datamorpho.jpg",
+  "reconstruction_object": "python\\datamorpho\\tests\\real_test\\result\\3\\reconstruction-state-3.json",
+  "state_id": "state-3",
+  "output_path": "python\\datamorpho\\tests\\real_test\\result\\3\\4.jpg",
+  "output_sha256": "RXezrwTMuOyX_Hk30xQhETV8ac8P6jYpKdOeU5uiTfU",
+  "output_size_bytes": 11599
+}

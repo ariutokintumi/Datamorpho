@@ -509,6 +509,8 @@ $year = date('Y');
                     <p>A visible image containing a later reconstructable hidden state.</p>
                     <div class="example-meta">
                         Includes: base JPEG, Datamorphed JPEG, manifest, reconstruction object, expected hidden output.
+                        <br><br>
+                        <a href="https://github.com/ariutokintumi/datamorpho/tree/main/python/datamorpho/tests/jpg_real_test" target="_blank" rel="noopener noreferrer">View real JPEG fixture in repository →</a>
                     </div>
                 </article>
 

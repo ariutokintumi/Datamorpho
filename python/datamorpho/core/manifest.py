@@ -45,6 +45,7 @@ def make_public_state_descriptor(
     state_id: str,
     hidden_file: Path,
     reconstruction_digest: str,
+    morphostorage_text: str = "Accompanying reconstruction object file generated alongside the carrier output.",
 ) -> dict[str, Any]:
     return {
         "state_id": state_id,
@@ -61,7 +62,7 @@ def make_public_state_descriptor(
         "morphostorage": [
             {
                 "type": "text",
-                "value": "Accompanying reconstruction object file generated alongside the carrier output.",
+                "value": morphostorage_text,
             },
         ],
         "reconstruction_digest": {

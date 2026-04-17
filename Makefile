@@ -41,7 +41,7 @@ ifndef CARRIER
 	$(error CARRIER is required, e.g. make reconstruct CARRIER=./out/base.datamorph.jpg RECON=./out/reconstruction-state-1.json)
 endif
 ifndef RECON
-	$(error RECON is required, e.g. make reconstruct CARRIER=./out/base.datamorph.jpg RECON=./out/reconstruction-state-1.json)
+	$(error RECON is required, e.g. make reconstruct CARRIER=./out/base.datamorpho.jpg RECON=./out/reconstruction-state-1.json)
 endif
 	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m datamorpho.cli.reconstruct \
 		--carrier "$(CARRIER)" \
