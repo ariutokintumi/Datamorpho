@@ -505,7 +505,8 @@ $year = date('Y');
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#scope">Read the core sections</a>
                     <a class="btn btn-secondary" href="/whitepaper">Open the Whitepaper</a>
-                    <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho/blob/main/docs/specification/Datamorpho-Specification-v0.001.md" target="_blank" rel="noopener noreferrer">Read .md in repository</a>
+                    <a class="btn btn-secondary" href="https://github.com/ariutokintumi/datamorpho/raw/main/docs/specification/Datamorpho-Specification-v0.001.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
                 </div>
 
                 <ul class="meta-list">

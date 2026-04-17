@@ -12,7 +12,14 @@ from datamorpho.core.reconstructor import reconstruct_hidden_state
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Reconstruct one hidden state from a Datamorphed JPEG or TXT carrier."
+        description="Reconstruct one hidden state from a Datamorphed JPEG or TXT carrier.",
+        epilog=(
+            "Datamorpho reference implementation\n"
+            "Website:       https://datamorpho.io\n"
+            "Specification: https://datamorpho.io/specification\n"
+            "Examples:      https://datamorpho.io/examples\n"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
         "--carrier",

@@ -1,5 +1,11 @@
 # DATAMORPHO
 
+**Website:** https://datamorpho.io  
+**Repository:** https://github.com/ariutokintumi/datamorpho  
+**Specification version:** `0.001` — Public Draft
+
+---
+
 **Datamorpho** is an open file standard for **multi-state files**.
 
 A Datamorphed file remains valid in its original format while containing one or more **sealed hidden states** that can be reconstructed later using a state-specific reconstruction object.
@@ -45,7 +51,8 @@ A strong example is NFT pre-reveal / reveal without moving metadata, but Datamor
 ## Current version
 
 **Specification version:** `0.001`  
-**Status:** Public Draft
+**Status:** Public Draft  
+**Web tools:** https://datamorpho.io/tools
 
 ### Protocol-level carrier profiles in the current public materials
 
@@ -71,11 +78,15 @@ PDF is part of the broader protocol discussion and public materials, but it is i
 
 ## Documents
 
-- [Specification](./docs/specification/Datamorpho-Specification-v0.001.md)
-- [Whitepaper](./docs/whitepaper/Datamorpho-Whitepaper-v0.001.md)
-- [FAQ](./docs/faq/faq.md)
-- [Glossary](./docs/glossary/glossary.md)
-- [Changelog](./CHANGELOG.md)
+| Document | In this repo | On the website |
+|---|---|---|
+| Specification | [Datamorpho-Specification-v0.001.md](./docs/specification/Datamorpho-Specification-v0.001.md) | [datamorpho.io/specification](https://datamorpho.io/specification) |
+| Whitepaper | [Datamorpho-Whitepaper-v0.001.md](./docs/whitepaper/Datamorpho-Whitepaper-v0.001.md) | [datamorpho.io/whitepaper](https://datamorpho.io/whitepaper) |
+| FAQ | [faq.md](./docs/faq/faq.md) | [datamorpho.io/faq](https://datamorpho.io/faq) |
+| Glossary | [glossary.md](./docs/glossary/glossary.md) | [datamorpho.io/glossary](https://datamorpho.io/glossary) |
+| Changelog | [CHANGELOG.md](./CHANGELOG.md) | [datamorpho.io/changelog](https://datamorpho.io/changelog) |
+| Roadmap | — | [datamorpho.io/roadmap](https://datamorpho.io/roadmap) |
+| Examples | — | [datamorpho.io/examples](https://datamorpho.io/examples) |
 
 ## Reference tooling
 
@@ -116,8 +127,9 @@ The current focus is:
 
 ## Discussion
 
-- GitHub Discussions for protocol and design discussion
-- GitHub Issues for concrete specification and implementation issues
+- [GitHub Discussions](https://github.com/ariutokintumi/datamorpho/discussions) — protocol and design discussion
+- [GitHub Issues](https://github.com/ariutokintumi/datamorpho/issues) — concrete specification and implementation issues
+- [datamorpho.io/community](https://datamorpho.io/community) — community page
 
 ## Author
 

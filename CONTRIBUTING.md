@@ -1,5 +1,10 @@
 # Contributing
 
+**Website:** https://datamorpho.io  
+**Repository:** https://github.com/ariutokintumi/datamorpho  
+**Discussions:** https://github.com/ariutokintumi/datamorpho/discussions  
+**Issues:** https://github.com/ariutokintumi/datamorpho/issues
+
 Datamorpho is an open protocol project. Contributions are welcome in any of the following areas.
 
 ## What can be contributed
@@ -13,9 +18,9 @@ Datamorpho is an open protocol project. Contributions are welcome in any of the 
 
 ## How to contribute
 
-1. Open a GitHub Issue first for anything non-trivial to discuss the change before implementing it.
+1. Open a [GitHub Issue](https://github.com/ariutokintumi/datamorpho/issues) first for anything non-trivial to discuss the change before implementing it.
 2. For small fixes (typos, wording), a direct pull request is fine.
-3. For protocol-level changes, use GitHub Discussions so the reasoning can be reviewed before any PR.
+3. For protocol-level changes, use [GitHub Discussions](https://github.com/ariutokintumi/datamorpho/discussions) so the reasoning can be reviewed before any PR.
 
 ## Contribution principles
 
@@ -33,4 +38,4 @@ Datamorpho is an open protocol project. Contributions are welcome in any of the 
 
 ## Contact
 
-For questions before contributing, reach out via GitHub Discussions or at g@evvm.org.
+For questions before contributing, reach out via [GitHub Discussions](https://github.com/ariutokintumi/datamorpho/discussions) or at g@evvm.org.

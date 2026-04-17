@@ -806,7 +806,7 @@ Because they give a strong initial set of carriers across media, text, and struc
 
 ## **10\. Why is the version 0.001 and not 0.002?**
 
-Because this is the first formal open specification release. The 2022 ETHGlobal Mexico 2022 project is the origin story and prototype lineage, not a prior published normative spec.
+Because this is the first formal open specification release. The 2022 ETHGlobal Mexico project is the origin story and prototype lineage, not a prior published normative spec.
 
 ---
 

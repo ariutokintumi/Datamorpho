@@ -1,5 +1,9 @@
 # Security
 
+**Security page:** https://datamorpho.io/security  
+**Public issues:** https://github.com/ariutokintumi/datamorpho/issues  
+**Private reports:** g@evvm.org
+
 ## What Datamorpho aims to protect
 
 - controlled disclosure of hidden states
@@ -42,7 +46,7 @@ When the public create and reconstruct tools go live in browser form, Datamorpho
 
 ## When to use public issues
 
-Use public GitHub issues or discussions for non-sensitive problems such as:
+Use [public GitHub issues](https://github.com/ariutokintumi/datamorpho/issues) or [discussions](https://github.com/ariutokintumi/datamorpho/discussions) for non-sensitive problems such as:
 
 - wording errors
 - specification clarity problems

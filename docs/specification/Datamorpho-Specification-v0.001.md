@@ -212,12 +212,13 @@ The `algorithm` value **MUST** be explicit. This specification does not restrict
 
 **7.7 Key Material Object**
 
-### {
-
-"format": "raw|suite-defined|custom",  
-"encoding": "base64url",  
-"value": "base64url-without-padding"  
+```
+{
+"format": "raw|suite-defined|custom",
+"encoding": "base64url",
+"value": "base64url-without-padding"
 }
+```
 
 **Required fields**
 
@@ -236,7 +237,7 @@ The `algorithm` value **MUST** be explicit. This specification does not restrict
 * `description`  
 * `x-*`
 
-### The contents of `key_material` are interpreted according to the corresponding `crypto_suite`. In some implementations this may be a raw key; in others it may be a suite-defined secret blob or key package.
+The contents of `key_material` are interpreted according to the corresponding `crypto_suite`. In some implementations this may be a raw key; in others it may be a suite-defined secret blob or key package.
 
 ### **7.8 Canonical JSON Serialization for Digests**
 

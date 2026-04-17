@@ -15,7 +15,14 @@ def build_parser() -> argparse.ArgumentParser:
         description=(
             "Create a Datamorphed JPEG or TXT carrier from one base file and one or more hidden states. "
             "The maximum number of states is controlled by --max-states."
-        )
+        ),
+        epilog=(
+            "Datamorpho reference implementation\n"
+            "Website:       https://datamorpho.io\n"
+            "Specification: https://datamorpho.io/specification\n"
+            "Examples:      https://datamorpho.io/examples\n"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("--carrier", required=True, type=Path, help="Path to the base carrier file (JPEG or TXT).")
     parser.add_argument(

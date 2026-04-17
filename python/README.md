@@ -1,5 +1,10 @@
 # Datamorpho Python Reference Tools
 
+**Website:** https://datamorpho.io  
+**Specification:** https://datamorpho.io/specification  
+**Examples:** https://datamorpho.io/examples  
+**Repository:** https://github.com/ariutokintumi/datamorpho
+
 This directory contains the first reference implementation for creating and reconstructing Datamorphed files in the first public demo wave.
 
 ## Scope of this first implementation
@@ -13,7 +18,7 @@ This directory contains the first reference implementation for creating and reco
 
 ## Why this implementation exists first
 
-The Datamorpho website will later use browser-side JavaScript, not server-side Python processing.
+The Datamorpho website (https://datamorpho.io) will later use browser-side JavaScript, not server-side Python processing.
 
 For that reason, the correct path is:
 
@@ -180,3 +185,7 @@ It is suitable for:
 
 It is **not** presented as a production-grade privacy service.
 For privacy-sensitive usage, users should run their own implementation locally or on infrastructure they control.
+
+---
+
+Protocol documentation and free web tools at **https://datamorpho.io**
