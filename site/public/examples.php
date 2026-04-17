@@ -539,7 +539,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/example-families.svg"
                  alt="Four example carrier families showing the three-step pipeline: base file to Datamorphed file, then combining with a Reconstruction Object to produce the reconstructed output. JPEG and TXT are fully supported. PDF is defined at protocol level and arrives in Phase 5. Static Metadata Reveal works with a datamorphed file pair at fixed public URLs."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 

@@ -24,7 +24,7 @@ $entries = [
         'version' => 'Historical origin',
         'title' => 'Prototype lineage before the formal public spec',
         'items' => [
-            'Datamorpho was publicly showcased as a prototype in the ETHGlobal / ETHMexico 2022 context.',
+            'Datamorpho was publicly showcased as a prototype in the ETHGlobal Mexico 2022 context.',
             'That earlier work represents the project origin and prototype lineage, not a prior normative public specification release.',
             'The current v0.001 release is the first formal open specification-era publication of Datamorpho.',
         ],

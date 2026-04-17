@@ -616,7 +616,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/architecture.svg"
                  alt="Datamorpho architecture: a Datamorphed File (containing Base Carrier, Public Manifest, and Concealed Payload) plus a Reconstruction Object produces the Hidden State output. MorphoStorage optionally hosts Reconstruction Objects."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -691,7 +691,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/sparse-layout.svg"
                  alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries. Logical reconstruction order is independent from physical offset order."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -795,7 +795,7 @@ $year = date('Y');
                 <p class="section-kicker">Origin</p>
                 <h2 class="section-title">From early prototype to open protocol</h2>
                 <p class="section-text">
-                    Datamorpho’s public origin traces back to an early prototype showcased at ETHMexico 2022, where the project appeared as a finalist and already framed the idea of dynamic files and static-location reveal patterns. The present whitepaper and specification are the first formal open protocol releases.
+                    Datamorpho’s public origin traces back to an early prototype showcased at ETHGlobal Mexico 2022, where the project appeared as a finalist and already framed the idea of dynamic files and static-location reveal patterns. The present whitepaper and specification are the first formal open protocol releases.
                 </p>
             </div>
 

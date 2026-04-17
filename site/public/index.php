@@ -849,7 +849,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/carrier-profiles.svg"
                  alt="Carrier profiles: JPEG appends a DMOR binary trailer block after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -951,7 +951,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/lifecycle.svg"
                  alt="Datamorpho lifecycle: four steps — start from a valid file, add a public manifest, embed concealed payload, then reconstruct a hidden state later using a reconstruction object."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -997,7 +997,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/sparse-layout.svg"
                  alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps between them. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -1035,7 +1035,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/nft-metadata.svg"
                  alt="NFT-style static metadata reveal pattern: four stages (egg, larva, chrysalis, butterfly) unlocked by providing the state-specific reconstruction object. The file at the fixed public URL never changes."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
 
             <div class="section-actions">
                 <a class="btn btn-secondary" href="/examples">View Examples</a>

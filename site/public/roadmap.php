@@ -585,7 +585,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/roadmap-timeline.svg"
                  alt="Datamorpho roadmap: eight phases. Phases 1 and 2 are the current active focus. Phases 3 and 4 cover JavaScript library and free web tools. Phases 5 through 8 cover PDF carrier, MorphoStorage, audio and video carriers, and expanded infrastructure."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 

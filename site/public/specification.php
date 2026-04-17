@@ -608,7 +608,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/architecture.svg"
                  alt="Datamorpho architecture: a Datamorphed File containing Base Carrier, Public Manifest, and Concealed Payload layers. Combined with a Reconstruction Object it produces a verified Hidden State output. MorphoStorage optionally hosts Reconstruction Objects."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -641,7 +641,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/carrier-profiles.svg"
                  alt="Carrier profiles: JPEG appends a DMOR binary trailer block after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -752,7 +752,7 @@ $year = date('Y');
 
             <img src="/assets/diagrams/sparse-layout.svg"
                  alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries. Logical reconstruction order is independent from physical offset order."
-                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
+                 style="width:100%;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
