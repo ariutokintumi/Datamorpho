@@ -47,3 +47,9 @@
 
 **Trigger**  
  A declared condition associated with a hidden state, such as time, event, action, ownership, or custom logic.
+
+**Digest Cross-Binding**  
+ The linking model in which public state descriptors reference reconstruction-object digests, and reconstruction objects reference the carrier file digest, creating a verifiable chain across the three artifacts.
+
+**Key Material**  
+ Secret material included in a reconstruction object and required to recover one or more fragments or a whole hidden state.

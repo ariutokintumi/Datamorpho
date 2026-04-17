@@ -7,6 +7,8 @@ A Datamorphed file remains valid in its original format while containing one or 
 Datamorpho is **not steganography**.  
 A Datamorphed file is expected to **publicly declare** that hidden states exist and where reconstruction information may later be found.
 
+![Datamorpho lifecycle: four steps from a valid base file to a public manifest, concealed payload embedding, and final reconstruction using a state-specific reconstruction object](./docs/diagrams/lifecycle.svg)
+
 ## Core idea
 
 Datamorpho separates a file into four conceptual layers:
@@ -15,6 +17,8 @@ Datamorpho separates a file into four conceptual layers:
 2. **Public manifest** — declares Datamorphosis, states, triggers, and MorphoStorage
 3. **Concealed payload** — hidden bytes embedded in the carrier
 4. **Reconstruction object** — the secret-bearing object used to reconstruct one hidden state
+
+![Datamorpho architecture: a Datamorphed File containing Base Carrier, Public Manifest, and Concealed Payload, combined with a Reconstruction Object, produces the Hidden State output](./docs/diagrams/architecture.svg)
 
 A hidden state may be built from:
 
@@ -48,6 +52,8 @@ A strong example is NFT pre-reveal / reveal without moving metadata, but Datamor
 - JPEG
 - TXT
 - PDF
+
+![Carrier profiles: JPEG appends a DMOR binary trailer after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling.](./docs/diagrams/carrier-profiles.svg)
 
 ### First usable reference implementation
 
@@ -88,7 +94,7 @@ Planned next:
 
 ## Repository structure
 
-- `docs/` — specification, whitepaper, FAQ, glossary, and related public materials
+- `docs/` — specification, whitepaper, FAQ, glossary, diagrams, and related public materials
 - `python/` — Python reference implementation for creating and reconstructing Datamorphed files
 - `site/` — website source code and public pages
 - `CHANGELOG.md` — public release history
