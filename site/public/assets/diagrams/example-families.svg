@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 204"
+     role="img" aria-label="Four example carrier families. Each shows a three-step pipeline: base file to Datamorphed file, then combining with a Reconstruction Object to produce the reconstructed output. JPEG and TXT are fully supported in demo tooling. PDF is defined at the protocol level and arrives in Phase 5. Static Metadata Reveal works with a datamorphed image plus a datamorphed metadata file at a fixed public URL.">
+
+  <!-- ── JPEG column ── x=16 cx=114 -->
+  <rect x="16" y="16" width="196" height="162" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="16" y="16" width="196" height="28" rx="10" fill="#0f172a"/>
+  <rect x="16" y="30"  width="196" height="14"        fill="#0f172a"/>
+  <text x="114" y="34" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" letter-spacing="1" fill="#fff">JPEG</text>
+
+  <!-- step 1 -->
+  <rect x="32" y="52" width="164" height="30" rx="6"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="114" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">image.jpg</text>
+  <text x="114" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">base JPEG carrier</text>
+
+  <line x1="114" y1="82" x2="114" y2="94" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="109,90 119,90 114,98" fill="#94a3b8"/>
+
+  <!-- step 2 -->
+  <rect x="32" y="98" width="164" height="30" rx="6"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="114" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0b57d0">image_dm.jpg</text>
+  <text x="114" y="122" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#3b82f6">manifest + payload</text>
+
+  <!-- arrow 2 with RO label -->
+  <line x1="114" y1="128" x2="114" y2="140" stroke="#0b57d0" stroke-width="1.5"/>
+  <polygon points="109,136 119,136 114,144" fill="#0b57d0"/>
+  <rect x="138" y="130" width="42" height="16" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="159" y="142" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" font-weight="700" fill="#0b57d0">+ RO</text>
+  <line x1="138" y1="138" x2="122" y2="138" stroke="#0b57d0" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <!-- step 3 -->
+  <rect x="32" y="146" width="164" height="26" rx="6"
+        fill="#fff" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="114" y="157" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#083b8a">hidden_state.txt</text>
+  <text x="114" y="167" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#1e40af">reconstructed output</text>
+
+  <text x="114" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">JPEG viewer unaffected</text>
+
+  <!-- ── TXT column ── x=228 cx=326 -->
+  <rect x="228" y="16" width="196" height="162" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="228" y="16" width="196" height="28" rx="10" fill="#0f172a"/>
+  <rect x="228" y="30"  width="196" height="14"        fill="#0f172a"/>
+  <text x="326" y="34" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" letter-spacing="1" fill="#fff">TXT</text>
+
+  <rect x="244" y="52" width="164" height="30" rx="6"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="326" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">document.txt</text>
+  <text x="326" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">base text carrier</text>
+
+  <line x1="326" y1="82" x2="326" y2="94" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="321,90 331,90 326,98" fill="#94a3b8"/>
+
+  <rect x="244" y="98" width="164" height="30" rx="6"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="326" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0b57d0">document_dm.txt</text>
+  <text x="326" y="122" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#3b82f6">envelope + payload</text>
+
+  <line x1="326" y1="128" x2="326" y2="140" stroke="#0b57d0" stroke-width="1.5"/>
+  <polygon points="321,136 331,136 326,144" fill="#0b57d0"/>
+  <rect x="350" y="130" width="42" height="16" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="371" y="142" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" font-weight="700" fill="#0b57d0">+ RO</text>
+  <line x1="350" y1="138" x2="334" y2="138" stroke="#0b57d0" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <rect x="244" y="146" width="164" height="26" rx="6"
+        fill="#fff" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="326" y="157" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#083b8a">hidden.txt</text>
+  <text x="326" y="167" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#1e40af">reconstructed output</text>
+
+  <text x="326" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">visible text unaffected</text>
+
+  <!-- ── PDF column ── x=440 cx=538 (protocol only) -->
+  <rect x="440" y="16" width="196" height="162" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"
+        stroke-dasharray="6 3"/>
+  <rect x="440" y="16" width="196" height="28" rx="10" fill="#64748b"/>
+  <rect x="440" y="30"  width="196" height="14"        fill="#64748b"/>
+  <text x="538" y="34" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" letter-spacing="1" fill="#fff">PDF</text>
+
+  <text x="538" y="80" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" fill="#475569">Defined in the protocol.</text>
+  <text x="538" y="96" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" fill="#475569">Uses incremental update</text>
+  <text x="538" y="112" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" fill="#475569">structure.</text>
+  <text x="538" y="138" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9.5" font-weight="700" fill="#94a3b8">Arriving Phase 5</text>
+  <text x="538" y="155" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#94a3b8">not in demo tooling</text>
+
+  <text x="538" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">protocol-level definition exists</text>
+
+  <!-- ── Static Metadata Reveal column ── x=652 cx=750 -->
+  <rect x="652" y="16" width="196" height="162" rx="10"
+        fill="#f8fafc" stroke="#0b57d0" stroke-width="1.5"/>
+  <rect x="652" y="16" width="196" height="28" rx="10" fill="#0b57d0"/>
+  <rect x="652" y="30"  width="196" height="14"        fill="#0b57d0"/>
+  <text x="750" y="34" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" letter-spacing="0.5" fill="#fff">STATIC REVEAL</text>
+
+  <rect x="668" y="52" width="164" height="30" rx="6"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="750" y="63" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#334155">image.jpg + meta.txt</text>
+  <text x="750" y="75" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">base file pair</text>
+
+  <line x1="750" y1="82" x2="750" y2="94" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="745,90 755,90 750,98" fill="#94a3b8"/>
+
+  <rect x="668" y="98" width="164" height="30" rx="6"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="750" y="109" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">both files datamorphed</text>
+  <text x="750" y="121" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#3b82f6">fixed public URLs</text>
+
+  <line x1="750" y1="128" x2="750" y2="140" stroke="#0b57d0" stroke-width="1.5"/>
+  <polygon points="745,136 755,136 750,144" fill="#0b57d0"/>
+  <rect x="774" y="130" width="42" height="16" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="795" y="142" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" font-weight="700" fill="#0b57d0">+ RO</text>
+  <line x1="774" y1="138" x2="758" y2="138" stroke="#0b57d0" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <rect x="668" y="146" width="164" height="26" rx="6"
+        fill="#fff" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="750" y="157" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#083b8a">state₁ ··· stateₙ</text>
+  <text x="750" y="167" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#1e40af">one RO unlocks each stage</text>
+
+  <text x="750" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">public metadata URL never changes</text>
+
+</svg>

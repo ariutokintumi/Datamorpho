@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 252"
+     role="img" aria-label="Datamorpho roadmap: eight phases. Phases 1 and 2 are the current active focus covering specification, documentation, and Python tooling. Phases 3 and 4 cover JavaScript library and free web tools. Phases 5 through 8 cover PDF carrier support, MorphoStorage infrastructure, audio and video carriers, and expanded infrastructure and standards work.">
+
+  <!-- ══════════════════════════════════════════
+       ROW 1 — phases 1-4
+       ══════════════════════════════════════════ -->
+
+  <!-- Phase 1 — x=16, dark -->
+  <rect x="16" y="16" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+  <rect x="16" y="16" width="184" height="30" rx="10" fill="#0f172a"/>
+  <rect x="16" y="30"  width="184" height="16" fill="#0f172a"/>
+  <circle cx="40" cy="31" r="11" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <text x="40" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">1</text>
+  <text x="117" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.75)">ACTIVE</text>
+  <text x="108" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0f172a">Specification,</text>
+  <text x="108" y="77" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0f172a">whitepaper &amp; docs</text>
+  <text x="108" y="99" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">open public repository</text>
+  <text x="108" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">examples &amp; glossary</text>
+
+  <!-- arrow 1→2 -->
+  <line x1="200" y1="65" x2="216" y2="65" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="213,60 226,65 213,70" fill="#0f172a"/>
+
+  <!-- Phase 2 — x=228 -->
+  <rect x="228" y="16" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#0b57d0" stroke-width="1.5"/>
+  <rect x="228" y="16" width="184" height="30" rx="10" fill="#0b57d0"/>
+  <rect x="228" y="30"  width="184" height="16" fill="#0b57d0"/>
+  <circle cx="252" cy="31" r="11" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="252" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">2</text>
+  <text x="329" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.75)">ACTIVE</text>
+  <text x="320" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0f172a">Python reference</text>
+  <text x="320" y="77" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0f172a">tooling</text>
+  <text x="320" y="99" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">creator &amp; reconstructor</text>
+  <text x="320" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">JPEG and TXT carriers</text>
+
+  <!-- arrow 2→3 -->
+  <line x1="412" y1="65" x2="428" y2="65" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="425,60 438,65 425,70" fill="#475569"/>
+
+  <!-- Phase 3 — x=440 -->
+  <rect x="440" y="16" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="440" y="16" width="184" height="30" rx="10" fill="#334155"/>
+  <rect x="440" y="30"  width="184" height="16" fill="#334155"/>
+  <circle cx="464" cy="31" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="464" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">3</text>
+  <text x="532" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">JavaScript</text>
+  <text x="532" y="77" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">browser library</text>
+  <text x="532" y="99" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">browser-compatible</text>
+  <text x="532" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">detection &amp; reconstruction</text>
+
+  <!-- arrow 3→4 -->
+  <line x1="624" y1="65" x2="640" y2="65" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="637,60 650,65 637,70" fill="#475569"/>
+
+  <!-- Phase 4 — x=652 -->
+  <rect x="652" y="16" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="652" y="16" width="184" height="30" rx="10" fill="#334155"/>
+  <rect x="652" y="30"  width="184" height="16" fill="#334155"/>
+  <circle cx="676" cy="31" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="676" y="36" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">4</text>
+  <text x="744" y="64" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">Free web tools</text>
+  <text x="744" y="77" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#334155">on datamorpho.io</text>
+  <text x="744" y="99" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">create &amp; reconstruct</text>
+  <text x="744" y="110" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">without local install</text>
+
+  <!-- wrap connector: right of phase 4 → down → left → start of row 2 -->
+  <path d="M 836,65 L 850,65 L 850,136 L 16,136"
+        fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <polygon points="10,131 24,136 10,141" fill="#94a3b8"/>
+
+  <!-- ══════════════════════════════════════════
+       ROW 2 — phases 5-8
+       ══════════════════════════════════════════ -->
+
+  <!-- Phase 5 — x=16 -->
+  <rect x="16" y="142" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="16" y="142" width="184" height="30" rx="10" fill="#475569"/>
+  <rect x="16" y="156"  width="184" height="16" fill="#475569"/>
+  <circle cx="40" cy="157" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="40" y="162" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">5</text>
+  <text x="108" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">PDF carrier</text>
+  <text x="108" y="203" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">support</text>
+  <text x="108" y="225" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">incremental update structure</text>
+  <text x="108" y="236" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">already in the specification</text>
+
+  <!-- arrow 5→6 -->
+  <line x1="200" y1="191" x2="216" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="213,186 226,191 213,196" fill="#94a3b8"/>
+
+  <!-- Phase 6 — x=228 -->
+  <rect x="228" y="142" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="228" y="142" width="184" height="30" rx="10" fill="#475569"/>
+  <rect x="228" y="156"  width="184" height="16" fill="#475569"/>
+  <circle cx="252" cy="157" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="252" y="162" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">6</text>
+  <text x="320" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">MorphoStorage</text>
+  <text x="320" y="203" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">infrastructure</text>
+  <text x="320" y="225" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">hosting &amp; retrieval layer</text>
+  <text x="320" y="236" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">IPFS-aligned flows</text>
+
+  <!-- arrow 6→7 -->
+  <line x1="412" y1="191" x2="428" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="425,186 438,191 425,196" fill="#94a3b8"/>
+
+  <!-- Phase 7 — x=440 -->
+  <rect x="440" y="142" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="440" y="142" width="184" height="30" rx="10" fill="#475569"/>
+  <rect x="440" y="156"  width="184" height="16" fill="#475569"/>
+  <circle cx="464" cy="157" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="464" y="162" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">7</text>
+  <text x="532" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">Audio &amp; video</text>
+  <text x="532" y="203" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">carriers</text>
+  <text x="532" y="225" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">beyond JPEG, TXT &amp; PDF</text>
+  <text x="532" y="236" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">media-heavy carriers</text>
+
+  <!-- arrow 7→8 -->
+  <line x1="624" y1="191" x2="640" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="637,186 650,191 637,196" fill="#94a3b8"/>
+
+  <!-- Phase 8 — x=652 -->
+  <rect x="652" y="142" width="184" height="98" rx="10"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="652" y="142" width="184" height="30" rx="10" fill="#475569"/>
+  <rect x="652" y="156"  width="184" height="16" fill="#475569"/>
+  <circle cx="676" cy="157" r="11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="676" y="162" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#fff">8</text>
+  <text x="744" y="190" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">Expanded infra</text>
+  <text x="744" y="203" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#475569">&amp; standards</text>
+  <text x="744" y="225" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">interoperability vectors</text>
+  <text x="744" y="236" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">open standards discussion</text>
+
+  <!-- ── legend ── -->
+  <rect x="16" y="248" width="828" height="1" fill="#e2e8f0"/>
+
+  <!-- legend items -->
+  <rect x="278" y="251" width="10" height="10" rx="2" fill="#0f172a"/>
+  <text x="292" y="260" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">active</text>
+  <rect x="338" y="251" width="10" height="10" rx="2" fill="#334155"/>
+  <text x="352" y="260" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">planned</text>
+  <rect x="408" y="251" width="10" height="10" rx="2" fill="#475569"/>
+  <text x="422" y="260" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">future</text>
+  <rect x="472" y="251" width="10" height="10" rx="2" fill="#0b57d0"/>
+  <text x="486" y="260" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">current (Python tooling)</text>
+
+</svg>

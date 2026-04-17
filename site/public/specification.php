@@ -606,10 +606,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: normative Datamorpho architecture</strong>
-                Show the four logical layers and the relationship between the public manifest, payload region, MorphoStorage directions, and a state-specific reconstruction object.
-            </div>
+            <img src="/assets/diagrams/architecture.svg"
+                 alt="Datamorpho architecture: a Datamorphed File containing Base Carrier, Public Manifest, and Concealed Payload layers. Combined with a Reconstruction Object it produces a verified Hidden State output. MorphoStorage optionally hosts Reconstruction Objects."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -640,10 +639,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: carrier profile comparison</strong>
-                Show the structural difference between JPEG trailer embedding, TXT envelope embedding, and PDF incremental-update embedding.
-            </div>
+            <img src="/assets/diagrams/carrier-profiles.svg"
+                 alt="Carrier profiles: JPEG appends a DMOR binary trailer block after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -752,10 +750,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: sparse vs sparse-with-chaff</strong>
-                Show a byte field with meaningful spans, unrelated bytes, optional chaff, and logical reconstruction order separate from physical offset order.
-            </div>
+            <img src="/assets/diagrams/sparse-layout.svg"
+                 alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries. Logical reconstruction order is independent from physical offset order."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 

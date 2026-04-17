@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 168"
+     role="img" aria-label="Carrier profiles: JPEG appends a DMOR binary trailer block after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling.">
+
+  <!-- ── JPEG ─────────────────────────────────────── -->
+  <rect x="16" y="16" width="258" height="136" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="16" y="16" width="258" height="32" rx="12" fill="#0f172a"/>
+  <rect x="16" y="30"  width="258" height="18"        fill="#0f172a"/>
+  <text x="145" y="37" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" letter-spacing="1" fill="#fff">JPEG</text>
+
+  <!-- byte strip -->
+  <rect x="28"  y="60" width="142" height="38" rx="7"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="99"  y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" fill="#334155">FFD8 ··· FFD9</text>
+  <text x="99"  y="91" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#64748b">original JPEG</text>
+
+  <text x="182" y="82" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="18" fill="#94a3b8">+</text>
+
+  <rect x="196" y="60" width="66" height="38" rx="7"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="229" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" fill="#0b57d0">DMOR</text>
+  <text x="229" y="91" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#3b82f6">trailer</text>
+
+  <text x="145" y="122" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#64748b">appended after EOI marker</text>
+  <text x="145" y="138" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#64748b">still valid for any JPEG viewer</text>
+
+  <!-- ── TXT ─────────────────────────────────────── -->
+  <rect x="300" y="16" width="258" height="136" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="300" y="16" width="258" height="32" rx="12" fill="#0f172a"/>
+  <rect x="300" y="30"  width="258" height="18"        fill="#0f172a"/>
+  <text x="429" y="37" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" letter-spacing="1" fill="#fff">TXT</text>
+
+  <rect x="312" y="60" width="88" height="38" rx="7"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="356" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" fill="#334155">visible</text>
+  <text x="356" y="91" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#64748b">plain text</text>
+
+  <text x="412" y="82" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="18" fill="#94a3b8">+</text>
+
+  <rect x="424" y="60" width="122" height="38" rx="7"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="485" y="74" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">===DATAMORPHO===</text>
+  <text x="485" y="86" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#3b82f6">envelope block</text>
+  <text x="485" y="97" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" fill="#3b82f6">at end of file</text>
+
+  <text x="429" y="122" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#64748b">terminal envelope after visible text</text>
+  <text x="429" y="138" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#64748b">still readable as plain text</text>
+
+  <!-- ── PDF ─────────────────────────────────────── -->
+  <rect x="584" y="16" width="258" height="136" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"
+        stroke-dasharray="6 3"/>
+  <rect x="584" y="16" width="258" height="32" rx="12" fill="#64748b"/>
+  <rect x="584" y="30"  width="258" height="18"        fill="#64748b"/>
+  <text x="713" y="37" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" letter-spacing="1" fill="#fff">PDF</text>
+
+  <text x="713" y="80" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9.5" fill="#475569">Defined in the protocol.</text>
+  <text x="713" y="97" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9.5" fill="#475569">Not in this demo tooling.</text>
+  <text x="713" y="120" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#94a3b8">Uses incremental update structure</text>
+  <text x="713" y="136" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#94a3b8">arriving in Phase 5</text>
+
+</svg>

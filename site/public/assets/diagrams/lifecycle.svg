@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 140"
+     role="img" aria-label="Datamorpho lifecycle: four steps — start from a valid file, add a public manifest, embed concealed payload, then reconstruct a hidden state later using a reconstruction object.">
+
+  <!-- ── STEP 1 ── -->
+  <rect x="16" y="24" width="168" height="92" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <circle cx="50" cy="46" r="13" fill="#0f172a"/>
+  <text x="50" y="51" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" fill="#fff">1</text>
+  <text x="100" y="50" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#0f172a">Valid file</text>
+  <rect x="36" y="64" width="128" height="28" rx="6"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="100" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#334155">image.jpg / doc.txt</text>
+  <text x="100" y="89" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">base carrier</text>
+  <text x="100" y="128" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">unchanged, valid for any viewer</text>
+
+  <!-- arrow 1→2 -->
+  <line x1="190" y1="70" x2="220" y2="70" stroke="#0b57d0" stroke-width="2"/>
+  <polygon points="217,64 230,70 217,76" fill="#0b57d0"/>
+
+  <!-- ── STEP 2 ── -->
+  <rect x="232" y="24" width="168" height="92" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <circle cx="266" cy="46" r="13" fill="#0f172a"/>
+  <text x="266" y="51" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" fill="#fff">2</text>
+  <text x="316" y="50" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#0f172a">Public manifest</text>
+  <rect x="248" y="64" width="136" height="28" rx="6"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="316" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0b57d0">manifest_type: public</text>
+  <text x="316" y="89" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#3b82f6">declares hidden states exist</text>
+  <text x="316" y="128" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8">openly readable, no secrets</text>
+
+  <!-- arrow 2→3 -->
+  <line x1="406" y1="70" x2="436" y2="70" stroke="#0b57d0" stroke-width="2"/>
+  <polygon points="433,64 446,70 433,76" fill="#0b57d0"/>
+
+  <!-- ── STEP 3 ── -->
+  <rect x="448" y="24" width="168" height="92" rx="12"
+        fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+  <circle cx="482" cy="46" r="13" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="482" y="51" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" fill="#fff">3</text>
+  <text x="532" y="50" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="rgba(255,255,255,0.88)">Embed payload</text>
+  <rect x="464" y="64" width="136" height="28" rx="6"
+        fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+        stroke-dasharray="4 3"/>
+  <text x="532" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.6)">concealed payload</text>
+  <text x="532" y="89" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="rgba(255,255,255,0.35)">encrypted · sparse layout</text>
+  <text x="532" y="128" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#475569">carrier file still functional</text>
+
+  <!-- arrow 3→4 -->
+  <line x1="622" y1="70" x2="652" y2="70" stroke="#0b57d0" stroke-width="2"/>
+  <polygon points="649,64 662,70 649,76" fill="#0b57d0"/>
+
+  <!-- ── STEP 4 ── -->
+  <rect x="664" y="24" width="180" height="92" rx="12"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.5"/>
+  <circle cx="700" cy="46" r="13" fill="#0b57d0"/>
+  <text x="700" y="51" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="11" font-weight="700" fill="#fff">4</text>
+  <text x="754" y="50" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="10" font-weight="700" fill="#083b8a">Reconstruct</text>
+  <rect x="678" y="64" width="152" height="28" rx="6"
+        fill="#fff" stroke="#0b57d0" stroke-width="1"/>
+  <text x="754" y="76" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" font-weight="700" fill="#0b57d0">+ Reconstruction Object</text>
+  <text x="754" y="89" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#1e40af">hidden state recovered</text>
+  <text x="754" y="128" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#3b82f6">integrity verified via digest</text>
+
+</svg>

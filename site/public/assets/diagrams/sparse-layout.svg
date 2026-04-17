@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 178"
+     role="img" aria-label="Sparse vs sparse-with-chaff byte layout. Top row: sparse layout — fragments in blue with empty gaps between them. Bottom row: sparse-with-chaff — same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries.">
+
+  <defs>
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- ── LABELS ── -->
+  <text x="16" y="36" font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" fill="#475569" letter-spacing="0.5">SPARSE</text>
+  <text x="16" y="110" font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" fill="#475569" letter-spacing="0.5">SPARSE + CHAFF</text>
+
+  <!-- ════════════════════════════════════════
+       ROW 1 — sparse (fragments + empty gaps)
+       ════════════════════════════════════════ -->
+  <!-- track -->
+  <rect x="120" y="20" width="724" height="32" rx="6"
+        fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- gap 1 (empty) -->
+  <rect x="120" y="20" width="72" height="32" rx="6"
+        fill="#f1f5f9"/>
+  <text x="156" y="40" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#cbd5e1">· · ·</text>
+
+  <!-- fragment A -->
+  <rect x="192" y="20" width="96" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="240" y="33" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag A</text>
+  <text x="240" y="45" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 72</text>
+
+  <!-- gap 2 (empty) -->
+  <rect x="288" y="20" width="116" height="32"
+        fill="#f1f5f9"/>
+  <text x="346" y="40" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#cbd5e1">· · · · ·</text>
+
+  <!-- fragment B -->
+  <rect x="404" y="20" width="80" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="444" y="33" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag B</text>
+  <text x="444" y="45" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 284</text>
+
+  <!-- gap 3 (empty) -->
+  <rect x="484" y="20" width="140" height="32"
+        fill="#f1f5f9"/>
+  <text x="554" y="40" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#cbd5e1">· · · · · ·</text>
+
+  <!-- fragment C -->
+  <rect x="624" y="20" width="112" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="680" y="33" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag C</text>
+  <text x="680" y="45" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 504</text>
+
+  <!-- gap 4 (empty) -->
+  <rect x="736" y="20" width="108" height="32" rx="6"
+        fill="#f1f5f9"/>
+  <text x="790" y="40" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#cbd5e1">· · · ·</text>
+
+  <!-- legend row 1 -->
+  <rect x="120" y="57" width="12" height="9" rx="2" fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="136" y="65" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">fragment bytes</text>
+  <rect x="220" y="57" width="12" height="9" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="236" y="65" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">empty gap — boundaries visible</text>
+
+  <!-- ════════════════════════════════════════
+       ROW 2 — sparse + chaff
+       ════════════════════════════════════════ -->
+  <!-- track -->
+  <rect x="120" y="94" width="724" height="32" rx="6"
+        fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- chaff 1 -->
+  <rect x="120" y="94" width="72" height="32" rx="6"
+        fill="url(#hatch)"/>
+  <text x="156" y="114" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#b45309">chaff</text>
+
+  <!-- fragment A -->
+  <rect x="192" y="94" width="96" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="240" y="107" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag A</text>
+  <text x="240" y="119" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 72</text>
+
+  <!-- chaff 2 -->
+  <rect x="288" y="94" width="116" height="32"
+        fill="url(#hatch)"/>
+  <text x="346" y="114" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#b45309">chaff</text>
+
+  <!-- fragment B -->
+  <rect x="404" y="94" width="80" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="444" y="107" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag B</text>
+  <text x="444" y="119" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 284</text>
+
+  <!-- chaff 3 -->
+  <rect x="484" y="94" width="140" height="32"
+        fill="url(#hatch)"/>
+  <text x="554" y="114" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#b45309">chaff</text>
+
+  <!-- fragment C -->
+  <rect x="624" y="94" width="112" height="32" rx="4"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="680" y="107" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8" font-weight="700" fill="#0b57d0">frag C</text>
+  <text x="680" y="119" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#3b82f6">offset 504</text>
+
+  <!-- chaff 4 -->
+  <rect x="736" y="94" width="108" height="32" rx="6"
+        fill="url(#hatch)"/>
+  <text x="790" y="114" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#b45309">chaff</text>
+
+  <!-- legend row 2 -->
+  <rect x="120" y="131" width="12" height="9" rx="2" fill="url(#hatch)" stroke="#d97706" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="136" y="139" font-family="'Courier New',Courier,monospace" font-size="7.5" fill="#475569">chaff — random bytes fill every gap, obscuring fragment boundaries</text>
+
+  <!-- footer note -->
+  <rect x="16" y="154" width="828" height="1" fill="#e2e8f0"/>
+  <text x="430" y="167" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8"
+        letter-spacing="0.4">logical reconstruction order is independent from physical offset order — fragments A → B → C may be reassembled in any declared sequence</text>
+
+</svg>

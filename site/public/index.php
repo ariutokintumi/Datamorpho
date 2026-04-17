@@ -847,10 +847,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder" role="note" aria-label="Diagram placeholder">
-                <strong>Diagram placeholder: current carrier profiles</strong>
-                Show three clean profile cards or a comparative technical diagram explaining how JPEG, TXT, and PDF carry Datamorpho content in version 0.001.
-            </div>
+            <img src="/assets/diagrams/carrier-profiles.svg"
+                 alt="Carrier profiles: JPEG appends a DMOR binary trailer block after the original image bytes. TXT appends a Datamorpho envelope block after visible text. PDF uses an incremental update structure and is defined in the protocol but not yet in demo tooling."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -950,10 +949,9 @@ $year = date('Y');
                 </p>
             </div>
 
-            <div class="placeholder" role="note" aria-label="Diagram placeholder">
-                <strong>Diagram placeholder: simple Datamorpho lifecycle</strong>
-                Show a four-step diagram from base file to public manifest, concealed payload, and later reconstruction using a state-specific reconstruction object.
-            </div>
+            <img src="/assets/diagrams/lifecycle.svg"
+                 alt="Datamorpho lifecycle: four steps — start from a valid file, add a public manifest, embed concealed payload, then reconstruct a hidden state later using a reconstruction object."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -997,10 +995,9 @@ $year = date('Y');
                 <a class="btn btn-secondary" href="/examples">View Examples</a>
             </div>
 
-            <div class="placeholder" role="note" aria-label="Diagram placeholder">
-                <strong>Diagram placeholder: sparse vs sparse-with-chaff</strong>
-                Show a byte field with meaningful spans, unreferenced bytes, chaff, and optional bytes belonging to other states. Make clear that logical reconstruction order is independent from physical offset order.
-            </div>
+            <img src="/assets/diagrams/sparse-layout.svg"
+                 alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps between them. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -1036,10 +1033,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder" role="note" aria-label="Diagram placeholder">
-                <strong>Diagram placeholder: NFT-style static metadata example</strong>
-                Show a Datamorphed JPEG and a Datamorphed metadata JSON/TXT file as a technical example of reveal without changing the public metadata location.
-            </div>
+            <img src="/assets/diagrams/nft-metadata.svg"
+                 alt="NFT-style static metadata reveal pattern: four stages (egg, larva, chrysalis, butterfly) unlocked by providing the state-specific reconstruction object. The file at the fixed public URL never changes."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
 
             <div class="section-actions">
                 <a class="btn btn-secondary" href="/examples">View Examples</a>

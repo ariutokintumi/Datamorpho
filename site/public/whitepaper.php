@@ -614,10 +614,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: Datamorpho conceptual model</strong>
-                Show the base carrier, public manifest, concealed payload, reconstruction object, and MorphoStorage as a clean conceptual architecture diagram.
-            </div>
+            <img src="/assets/diagrams/architecture.svg"
+                 alt="Datamorpho architecture: a Datamorphed File (containing Base Carrier, Public Manifest, and Concealed Payload) plus a Reconstruction Object produces the Hidden State output. MorphoStorage optionally hosts Reconstruction Objects."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
@@ -690,10 +689,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: sparse vs sparse-with-chaff</strong>
-                Show a technical byte-field example with meaningful spans, unrelated bytes, optional chaff, and logical order separate from physical order.
-            </div>
+            <img src="/assets/diagrams/sparse-layout.svg"
+                 alt="Sparse vs sparse-with-chaff byte layout. Sparse: fragments in blue with empty gaps. Sparse-with-chaff: same fragments but gaps filled with amber chaff bytes that obscure fragment boundaries. Logical reconstruction order is independent from physical offset order."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 

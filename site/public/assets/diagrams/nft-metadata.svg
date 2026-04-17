@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220"
+     role="img" aria-label="NFT-style static metadata reveal pattern. A fixed public URL points to a Datamorphed metadata file. Four stages — egg, caterpillar, chrysalis, butterfly — are unlocked progressively by providing the state-specific reconstruction object for each stage. The file at the public URL never changes.">
+
+  <!-- ── TOP RAIL: fixed public URL ── -->
+  <rect x="16" y="12" width="828" height="26" rx="8"
+        fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="430" y="28" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#475569"
+        letter-spacing="0.3">ipfs://Qm…abc/metadata.txt  —  fixed public URL, never changes</text>
+
+  <!-- divider lines down from rail -->
+  <line x1="215" y1="38" x2="215" y2="56" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="430" y1="38" x2="430" y2="56" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="645" y1="38" x2="645" y2="56" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- ── STAGE COLUMNS ── -->
+
+  <!-- ── STAGE 1: Egg ── -->
+  <rect x="16" y="56" width="198" height="144" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="16" y="56" width="198" height="28" rx="12" fill="#475569"/>
+  <rect x="16" y="70" width="198" height="14" fill="#475569"/>
+  <text x="115" y="73" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" letter-spacing="1" fill="#fff">STAGE 1 · EGG</text>
+
+  <!-- file icon -->
+  <rect x="88" y="93" width="54" height="44" rx="5"
+        fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <polyline points="126,93 142,93 142,106 126,106" fill="#cbd5e1" stroke="none"/>
+  <line x1="126" y1="93" x2="142" y2="106" stroke="#94a3b8" stroke-width="1"/>
+  <text x="115" y="125" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#475569">metadata.txt</text>
+
+  <text x="115" y="151" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">visible text only</text>
+  <text x="115" y="163" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#64748b">name: "?"</text>
+  <text x="115" y="186" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#94a3b8">no reconstruction object needed</text>
+
+  <!-- ── STAGE 2: Caterpillar ── -->
+  <rect x="232" y="56" width="196" height="144" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="232" y="56" width="196" height="28" rx="12" fill="#0f172a"/>
+  <rect x="232" y="70" width="196" height="14" fill="#0f172a"/>
+  <text x="330" y="73" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" letter-spacing="1" fill="#fff">STAGE 2 · LARVA</text>
+
+  <!-- file icon -->
+  <rect x="303" y="93" width="54" height="44" rx="5"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="330" y="121" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#0b57d0">metadata.txt</text>
+
+  <!-- key icon small -->
+  <circle cx="355" cy="98" r="5" fill="none" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="360" y1="98" x2="368" y2="98" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="366" y1="98" x2="366" y2="102" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="363" y1="98" x2="363" y2="101" stroke="#0b57d0" stroke-width="1.5"/>
+
+  <text x="330" y="151" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#334155">+ RO for state 2</text>
+  <text x="330" y="163" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#0b57d0">name: "Larva #42"</text>
+  <text x="330" y="186" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#94a3b8">same file, new hidden state</text>
+
+  <!-- ── STAGE 3: Chrysalis ── -->
+  <rect x="446" y="56" width="196" height="144" rx="12"
+        fill="#f8fafc" stroke="#d6dbe3" stroke-width="1.5"/>
+  <rect x="446" y="56" width="196" height="28" rx="12" fill="#0f172a"/>
+  <rect x="446" y="70" width="196" height="14" fill="#0f172a"/>
+  <text x="544" y="73" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" letter-spacing="1" fill="#fff">STAGE 3 · PUPA</text>
+
+  <rect x="517" y="93" width="54" height="44" rx="5"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1"/>
+  <text x="544" y="121" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#0b57d0">metadata.txt</text>
+
+  <circle cx="569" cy="98" r="5" fill="none" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="574" y1="98" x2="582" y2="98" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="580" y1="98" x2="580" y2="102" stroke="#0b57d0" stroke-width="1.5"/>
+  <line x1="577" y1="98" x2="577" y2="101" stroke="#0b57d0" stroke-width="1.5"/>
+
+  <text x="544" y="151" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#334155">+ RO for state 3</text>
+  <text x="544" y="163" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#0b57d0">name: "Chrysalis #42"</text>
+  <text x="544" y="186" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#94a3b8">same file, new hidden state</text>
+
+  <!-- ── STAGE 4: Butterfly ── -->
+  <rect x="660" y="56" width="184" height="144" rx="12"
+        fill="#dbeafe" stroke="#0b57d0" stroke-width="1.5"/>
+  <rect x="660" y="56" width="184" height="28" rx="12" fill="#0b57d0"/>
+  <rect x="660" y="70" width="184" height="14" fill="#0b57d0"/>
+  <text x="752" y="73" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" font-weight="700" letter-spacing="1" fill="#fff">STAGE 4 · IMAGO</text>
+
+  <rect x="725" y="93" width="54" height="44" rx="5"
+        fill="#fff" stroke="#0b57d0" stroke-width="1.2"/>
+  <text x="752" y="121" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#0b57d0">metadata.txt</text>
+
+  <!-- unlocked padlock -->
+  <path d="M774,95 a5,5 0 0,1 10,0" fill="none" stroke="#0b57d0" stroke-width="1.5"
+        stroke-linecap="round" transform="translate(3,-2) rotate(-20,779,95)"/>
+  <rect x="772" y="99" width="14" height="10" rx="2"
+        fill="#93c5fd" stroke="#0b57d0" stroke-width="1"/>
+  <circle cx="779" cy="104" r="1.5" fill="#0b57d0"/>
+
+  <text x="752" y="151" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#083b8a">+ RO for state 4</text>
+  <text x="752" y="163" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" font-weight="700" fill="#0b57d0">name: "Butterfly #42"</text>
+  <text x="752" y="186" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7" fill="#1e40af">final revealed state</text>
+
+  <!-- ── FOOTER ── -->
+  <rect x="16" y="207" width="828" height="1" fill="#e2e8f0"/>
+  <text x="430" y="218" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#94a3b8"
+        letter-spacing="0.4">on-chain pointer stays fixed · different Reconstruction Objects unlock each stage · the carrier file itself never moves</text>
+
+</svg>

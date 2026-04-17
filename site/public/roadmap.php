@@ -583,10 +583,9 @@ $year = date('Y');
                 </article>
             </div>
 
-            <div class="placeholder">
-                <strong>Diagram placeholder: roadmap timeline</strong>
-                Show the eight phases as a clean vertical or horizontal roadmap timeline, suitable for both protocol readers and general visitors.
-            </div>
+            <img src="/assets/diagrams/roadmap-timeline.svg"
+                 alt="Datamorpho roadmap: eight phases. Phases 1 and 2 are the current active focus. Phases 3 and 4 cover JavaScript library and free web tools. Phases 5 through 8 cover PDF carrier, MorphoStorage, audio and video carriers, and expanded infrastructure."
+                 style="width:100%;max-width:860px;display:block;margin:2rem auto 0;"/>
         </div>
     </section>
 
