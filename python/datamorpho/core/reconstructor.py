@@ -5,11 +5,11 @@ from json import JSONDecodeError
 from pathlib import Path
 from typing import Any
 
-from .carriers import parse_carrier
+from .carriers import compute_canonical_carrier_digest, parse_carrier
 from .crypto_utils import decrypt_fragment
 from .exceptions import ReconstructionError, ValidationError
 from .file_utils import validate_existing_file, validate_existing_json_file
-from .utils import ensure_dir, json_dump_pretty, safe_filename, sha256_bytes, sha256_file, write_bytes
+from .utils import ensure_dir, json_dump_pretty, safe_filename, sha256_bytes, write_bytes
 
 
 def reconstruct_hidden_state(
@@ -39,7 +39,11 @@ def reconstruct_hidden_state(
     if not declared_digest:
         raise ReconstructionError("The reconstruction object is missing carrier_file_digest.value.")
 
-    actual_digest = sha256_file(carrier_path)
+    # Verify against the canonical carrier digest (morphostorage stripped).
+    # Per spec Section 7.10: carrier_file_digest is computed from and verified
+    # against the carrier with morphostorage absent from all state descriptors,
+    # to remain independent of content-addressed storage references (e.g. IPFS).
+    actual_digest = compute_canonical_carrier_digest(carrier_path)
     if declared_digest != actual_digest:
         raise ReconstructionError(
             "Carrier digest mismatch. The reconstruction object does not match the supplied Datamorphed file."

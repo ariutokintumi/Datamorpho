@@ -2,15 +2,17 @@ PYTHON ?= python3
 PYTEST ?= pytest
 PYTHONPATH_VALUE := ./python
 
-.PHONY: help install test create reconstruct clean
+.PHONY: help install test create reconstruct pdf-spec pdf-whitepaper clean
 
 help:
 	@echo "Available targets:"
-	@echo "  install       Install Python dependencies"
-	@echo "  test          Run Python tests"
-	@echo "  create        Run example creator command (set CARRIER, STATE, optional STATE2..STATE5, SUITE, LAYOUT, OUT)"
-	@echo "  reconstruct   Run example reconstructor command (set CARRIER, RECON, optional OUT)"
-	@echo "  clean         Remove common local output directories and caches"
+	@echo "  install          Install Python dependencies"
+	@echo "  test             Run Python tests"
+	@echo "  create           Run example creator command (set CARRIER, STATE, optional STATE2..STATE5, SUITE, LAYOUT, OUT)"
+	@echo "  reconstruct      Run example reconstructor command (set CARRIER, RECON, optional OUT)"
+	@echo "  pdf-spec         Regenerate docs/specification/Datamorpho-Specification-v0.001.pdf from .md"
+	@echo "  pdf-whitepaper   Regenerate docs/whitepaper/Datamorpho-Whitepaper-v0.001.pdf from .md"
+	@echo "  clean            Remove common local output directories and caches"
 
 install:
 	$(PYTHON) -m pip install -r python/requirements.txt
@@ -47,6 +49,12 @@ endif
 		--carrier "$(CARRIER)" \
 		--reconstruction "$(RECON)" \
 		--out-dir "$(or $(OUT),./recovered)"
+
+pdf-spec:
+	$(PYTHON) docs/specification/build_pdf.py
+
+pdf-whitepaper:
+	$(PYTHON) docs/whitepaper/build_pdf.py
 
 clean:
 	rm -rf out recovered python/.pytest_cache

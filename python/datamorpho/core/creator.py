@@ -5,7 +5,7 @@ import secrets
 from pathlib import Path
 from typing import Any
 
-from .carriers import build_carrier
+from .carriers import build_carrier, strip_manifest_morphostorage
 from .constants import DEFAULT_LAYOUT
 from .crypto_utils import encrypt_fragment, finalize_state_key_material
 from .exceptions import ValidationError
@@ -219,14 +219,28 @@ def create_datamorpho(
         state_entries=public_states,
     )
 
-    # Build the final carrier and compute its digest
+    # Build the final carrier (with morphostorage in the manifest).
     carrier_profile, final_carrier_bytes = build_carrier(
         carrier_kind,
         carrier_bytes,
         public_manifest,
         payload_bytes,
     )
-    final_carrier_digest = sha256_bytes(final_carrier_bytes)
+
+    # carrier_file_digest MUST be computed from the canonical form of the carrier —
+    # i.e. with morphostorage stripped from all state descriptors.  This breaks
+    # the circular dependency that arises when morphostorage references a
+    # content-addressed storage system (e.g. IPFS) whose CID depends on the
+    # reconstruction objects, which in turn reference carrier_file_digest.
+    # Per spec Section 7.10.
+    canonical_manifest = strip_manifest_morphostorage(public_manifest)
+    _, canonical_carrier_bytes = build_carrier(
+        carrier_kind,
+        carrier_bytes,
+        canonical_manifest,
+        payload_bytes,
+    )
+    final_carrier_digest = sha256_bytes(canonical_carrier_bytes)
 
     # Set the final carrier digest in reconstruction objects
     for reconstruction in reconstruction_objects:

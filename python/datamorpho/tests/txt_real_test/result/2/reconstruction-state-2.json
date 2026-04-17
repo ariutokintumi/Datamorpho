@@ -1,0 +1,41 @@
+{
+  "datamorpho_version": "0.001",
+  "object_type": "reconstruction",
+  "reconstruction_id": "reconstruction-b0221f75585a4b40bfa304d41b63a722",
+  "state_id": "state-2",
+  "carrier_profile": "txt-envelope",
+  "created_at": "2026-04-17T07:38:49Z",
+  "layout_strategy": "sparse-with-chaff",
+  "reassembly": "concat-by-order",
+  "suite_profile": "simple",
+  "suites_used": [
+    "AES-256-CTR+HMAC-SHA-256"
+  ],
+  "carrier_file_digest": {
+    "algorithm": "sha256",
+    "value": "N29eFBabmEqe-5RxB7KdMP2PPRtS6PYixvxB_9wEwDw"
+  },
+  "state_filename": "3.txt",
+  "state_media_type": "text/plain",
+  "original_file": {
+    "filename": "3.txt",
+    "size_bytes": 1600
+  },
+  "state_key_material": null,
+  "fragments": [
+    {
+      "fragment_id": "state-2-fragment-1",
+      "payload_region": "main",
+      "order": 1,
+      "crypto_suite": "AES-256-CTR+HMAC-SHA-256",
+      "iv_b64url": "0MgULaNJzzUmu4lDzOtTtw",
+      "key_material": {
+        "format": "suite-defined",
+        "encoding": "base64url",
+        "value": "eyJlbmNfa2V5IjoiZ1k3eC1VbFZvSXRTV2NiUlNQWkVBYlYxWDctWG1Tc0Z6MjItU2lWSXNlUSIsIm1hY19rZXkiOiJtNVV4Rzh2U2pIcW1CZUF5X3dWRGpXQXUwUmd2QU9hbUVYY0o5YmZRNVF3IiwidGFnIjoiQTBJSVE3Qjh1NmFvZV93ZGRzSWFRQ1dJVVQ4dVN4UnUwb2VTc3BRR0ktayJ9"
+      },
+      "offset": 2677,
+      "length": 1600
+    }
+  ]
+}

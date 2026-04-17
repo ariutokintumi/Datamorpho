@@ -259,6 +259,30 @@ The `reconstruction_digest` of a reconstruction object **MUST** be computed over
 
 This exclusion rule prevents circular dependency between file binding and reconstruction-object binding.
 
+### **7.10 Canonical Form for carrier\_file\_digest**
+
+`carrier_file_digest` **MUST** be computed from and verified against the **canonical form** of the carrier, defined as the carrier with all `morphostorage` arrays removed from every state descriptor in the public manifest before the carrier is hashed.
+
+**Rationale:** `morphostorage` often references the storage location of the reconstruction objects themselves. When a content-addressed storage system is used — such as IPFS, where the storage address is derived from the hash of the stored content — a circular dependency arises:
+
+* `carrier_file_digest` depends on the carrier bytes,  
+* the carrier bytes contain `morphostorage` with the CID of the reconstruction object directory,  
+* that CID depends on the exact bytes of the reconstruction objects,  
+* the reconstruction objects contain `carrier_file_digest`.
+
+This is an unresolvable loop: neither digest can be computed without the other already being known. Excluding `morphostorage` from the carrier hash breaks the cycle. The reconstruction objects can be finalized and their storage CIDs computed before `morphostorage` is known; `morphostorage` can then be populated in the carrier manifest without invalidating any digest.
+
+This exclusion is **mandatory** when `morphostorage` references a content-addressed storage system. It **SHOULD** be applied universally for implementation simplicity, regardless of the storage type used.
+
+**Verification rule:** A reconstructor verifying `carrier_file_digest` **MUST** strip all `morphostorage` fields from the carrier manifest state descriptors before computing the hash, then compare against the declared value.
+
+**Relationship to Section 7.9:** Together, Sections 7.9 and 7.10 define the two symmetric exclusion rules that fully eliminate circular hash dependencies in the Datamorpho three-artifact model:
+
+| Digest | Excluded field | Reason |
+| --- | --- | --- |
+| `reconstruction_digest` | `carrier_file_digest` | RO cannot reference its own binding digest before the carrier exists |
+| `carrier_file_digest` | `morphostorage` | Carrier cannot reference the CID of objects whose bytes depend on the carrier hash |
+
 ---
 
 ## **8\. Logical Datamorpho Model**
@@ -706,18 +730,22 @@ Payload-Length: \<decimal\>
 After the header lines, writers **MUST** emit:
 
 1. one blank line,  
-2. the public manifest JSON text,  
-3. one blank line,  
-4. the base64url-encoded payload text,  
-5. the end delimiter.
+2. the body block: a single base64url-encoded string (without padding) that decodes to the manifest JSON bytes immediately followed by the payload bytes,  
+3. the end delimiter.
+
+The first `Manifest-Length` bytes of the decoded body block are the manifest JSON. The payload begins at byte offset `Manifest-Length` within the decoded body block and extends for `Payload-Length` bytes.
+
+**Rationale:** Encoding both manifest and payload as a single opaque block ensures the envelope body is visually homogeneous when the carrier is opened without a reconstruction object. The header fields remain human-readable; the body does not expose internal structure.
 
 ### **14.5 Manifest Body**
 
-The manifest body **MUST** be a public manifest JSON object as defined in Section 9\.
+The manifest portion of the body block **MUST** be a UTF-8 encoded public manifest JSON object as defined in Section 9\.
+
+`Manifest-Length` **MUST** specify the byte length of the manifest JSON encoded as UTF-8, matching the exact byte count used to split the decoded body block.
 
 ### **14.6 Payload Body**
 
-The textual payload body **MUST** be base64url without padding.
+The payload portion of the body block begins immediately after the manifest bytes within the decoded body block.
 
 `Payload-Length` **MUST** specify the byte length of the **decoded** payload byte region, not the encoded character count.
 
@@ -1135,10 +1163,10 @@ Payload-Encoding: base64url
 Manifest-Length: 486  
 Payload-Length: 64
 
-{"datamorpho\_version":"0.001","manifest\_type":"public","carrier":"txt","profile":"txt-envelope","states":\[{"state\_id":"state-1","triggers":\[{"trigger\_id":"t1","type":"custom","value":"minted"}\],"morphostorage":\[{"type":"uri","value":"https://example.org/s1.json"}\],"reconstruction\_digest":{"algorithm":"sha256","value":"mL9s4Yxv2L8x9u5dP1d3m8g6n0Q2r4w7t6z1b3e5c7A"}}\]}
-
-VGhpcyBpcyBhbiBleGFtcGxlIHBheWxvYWQgdGhhdCB3b3VsZCBub3JtYWxseSBiZSBiYXNlNjR1cmwu  
+eyJkYXRhbW9ycGhvX3ZlcnNpb24iOiIwLjAwMSIsIm1hbmlmZXN0X3R5cGUiOiJwdWJsaWMiLCJjYXJyaWVyIjoidHh0IiwicHJvZmlsZSI6InR4dC1lbnZlbG9wZSIsInN0YXRlcyI6W3sic3RhdGVfaWQiOiJzdGF0ZS0xIiwidHJpZ2dlcnMiOlt7InRyaWdnZXJfaWQiOiJ0MSIsInR5cGUiOiJjdXN0b20iLCJ2YWx1ZSI6Im1pbnRlZCJ9XSwibW9ycGhvc3RvcmFnZSI6W3sidHlwZSI6InVyaSIsInZhbHVlIjoiaHR0cHM6Ly9leGFtcGxlLm9yZy9zMS5qc29uIn1dLCJyZWNvbnN0cnVjdGlvbl9kaWdlc3QiOnsiYWxnb3JpdGhtIjoic2hhMjU2IiwidmFsdWUiOiJtTDlzNFl4djJMOHg5dTVkUDFkM204ZzZuMFEycjR3N3Q2ejFiM2U1YzdBIn19XX1WaGlzIGlzIGFuIGV4YW1wbGUgcGF5bG9hZCB0aGF0IHdvdWxkIG5vcm1hbGx5IGJlIGJhc2U2NHVybC4  
 \===DATAMORPHO-END===
+
+*Note: The body block decodes to the manifest JSON bytes (first 486 bytes) followed immediately by the payload bytes (next 64 bytes). The manifest JSON is not visible in the carrier file.*
 
 ---
 

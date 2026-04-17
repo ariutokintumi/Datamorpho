@@ -558,6 +558,18 @@ This means:
 
 That is a major structural strength of the standard.
 
+### Circular dependency exclusion rules
+
+The cross-binding design requires two carefully defined exclusion rules to avoid circular hash dependencies.
+
+**Rule 1 — reconstruction\_digest excludes carrier\_file\_digest.**  
+A reconstruction object cannot reference the carrier digest during its own hash computation, because the carrier digest is computed after the reconstruction objects are built. This is already excluded per the specification.
+
+**Rule 2 — carrier\_file\_digest excludes morphostorage.**  
+When `morphostorage` references a content-addressed storage system such as IPFS, the storage address is derived from the hash of the stored content. This creates a circular chain: the carrier hash depends on `morphostorage`, which depends on the CID of the reconstruction objects, which depends on the carrier hash. The specification resolves this by defining `carrier_file_digest` as computed from the carrier with `morphostorage` stripped from all state descriptors. This allows reconstruction objects to be finalized and their IPFS CIDs computed before the carrier manifest is updated with storage references.
+
+These two rules together fully eliminate circular hash dependencies across the three-artifact Datamorpho model. Both apply to all implementations regardless of storage type, for consistency.
+
 ---
 
 # **19\. Threat Model**

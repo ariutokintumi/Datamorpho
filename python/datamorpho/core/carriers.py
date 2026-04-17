@@ -16,7 +16,7 @@ from .constants import (
     TXT_END_MARKER,
 )
 from .exceptions import CarrierError
-from .utils import b64url_decode, b64url_encode, json_dumps_canonical
+from .utils import b64url_decode, b64url_encode, json_dumps_canonical, sha256_bytes
 
 
 @dataclass(slots=True)
@@ -119,8 +119,13 @@ def ensure_txt_is_clean(base_text: str) -> None:
 def build_txt_carrier(base_text: str, manifest: dict, payload: bytes, encoding: str) -> bytes:
     ensure_txt_is_clean(base_text)
     manifest_json = json.dumps(manifest, indent=2, ensure_ascii=True)
-    payload_b64url = b64url_encode(payload)
-    # DTE-0.001 envelope per spec Section 14
+    manifest_bytes = manifest_json.encode("utf-8")
+    # DTE-0.001 envelope per spec Section 14.
+    # Manifest and payload are concatenated and stored as a single base64url
+    # block so the envelope body is visually homogeneous when opened without
+    # a reconstruction object.  Manifest-Length in the header allows parsers
+    # to split the decoded block without re-parsing JSON boundaries.
+    body_b64url = b64url_encode(manifest_bytes + payload)
     block = (
         "\n\n\n"
         f"{TXT_BEGIN_MARKER}\n"
@@ -128,12 +133,10 @@ def build_txt_carrier(base_text: str, manifest: dict, payload: bytes, encoding: 
         f"Carrier-Profile: {TXT_PROFILE}\n"
         "Manifest-Encoding: json-utf8\n"
         "Payload-Encoding: base64url\n"
-        f"Manifest-Length: {len(manifest_json.encode('utf-8'))}\n"
+        f"Manifest-Length: {len(manifest_bytes)}\n"
         f"Payload-Length: {len(payload)}\n"
         "\n"
-        f"{manifest_json}\n"
-        "\n"
-        f"{payload_b64url}\n"
+        f"{body_b64url}\n"
         f"{TXT_END_MARKER}\n"
     )
     return (base_text + block).encode(encoding)
@@ -152,21 +155,29 @@ def parse_txt_carrier(carrier_bytes: bytes) -> ParsedCarrier:
     parts = envelope.split("\n\n", 1)
     if len(parts) < 2:
         raise CarrierError("The TXT Datamorpho envelope is missing the header/body separator.")
-    body = parts[1]
 
-    # Body contains: manifest JSON, blank line, base64url payload
-    body_parts = body.split("\n\n", 1)
-    if len(body_parts) < 2:
-        raise CarrierError("The TXT Datamorpho envelope is missing the manifest/payload separator.")
+    header_section = parts[0]
+    body = parts[1].strip()
 
-    manifest_section = body_parts[0].strip()
-    payload_section = body_parts[1].strip()
-    # Remove trailing end marker remnants if any
-    if payload_section.endswith("\n"):
-        payload_section = payload_section.rstrip("\n")
+    # Read Manifest-Length from headers — required to split the decoded block
+    manifest_length: int | None = None
+    for line in header_section.strip().splitlines():
+        if line.startswith("Manifest-Length:"):
+            try:
+                manifest_length = int(line.split(":", 1)[1].strip())
+            except ValueError as exc:
+                raise CarrierError("Invalid Manifest-Length value in envelope header.") from exc
+            break
+    if manifest_length is None:
+        raise CarrierError("Missing Manifest-Length in TXT Datamorpho envelope header.")
 
-    manifest = json.loads(manifest_section)
-    payload = b64url_decode(payload_section)
+    # Decode the single base64url block: manifest_bytes + payload_bytes
+    combined = b64url_decode(body)
+    if manifest_length > len(combined):
+        raise CarrierError("Manifest-Length exceeds the decoded envelope body size.")
+
+    manifest = json.loads(combined[:manifest_length].decode("utf-8"))
+    payload = combined[manifest_length:]
     return ParsedCarrier(carrier_profile=TXT_PROFILE, manifest=manifest, payload=payload, text_encoding=encoding)
 
 
@@ -178,6 +189,58 @@ def build_carrier(carrier_kind: str, base_bytes: bytes, manifest: dict, payload:
         base_text = base_bytes.decode(encoding)
         return TXT_PROFILE, build_txt_carrier(base_text, manifest, payload, encoding)
     raise CarrierError(f"Unsupported carrier kind: {carrier_kind}")
+
+
+def strip_manifest_morphostorage(manifest: dict) -> dict:
+    """Return a shallow copy of the manifest with morphostorage removed from
+    every state descriptor.
+
+    Used to compute carrier_file_digest in canonical form, breaking the circular
+    dependency that arises when morphostorage references a content-addressed
+    storage system (e.g. IPFS) whose address is itself derived from the content
+    hash of the reconstruction objects, which in turn reference carrier_file_digest.
+
+    Per spec Section 7.10: carrier_file_digest MUST be computed from and verified
+    against this canonical form.
+    """
+    stripped = {**manifest}
+    if "states" in stripped:
+        stripped["states"] = [
+            {k: v for k, v in state.items() if k != "morphostorage"}
+            for state in stripped["states"]
+        ]
+    return stripped
+
+
+def compute_canonical_carrier_digest(carrier_path: Path) -> str:
+    """Compute the canonical carrier_file_digest (sha256, base64url).
+
+    The canonical form strips morphostorage from all state descriptors before
+    hashing, so the digest is independent of where reconstruction objects will
+    later be published.  Both creator and reconstructor MUST use this function
+    rather than hashing the raw carrier bytes directly.
+    """
+    raw_bytes = carrier_path.read_bytes()
+    parsed = parse_carrier(carrier_path)
+    stripped_manifest = strip_manifest_morphostorage(parsed.manifest)
+
+    if parsed.carrier_profile == JPEG_PROFILE:
+        eoi_index = _find_first_jpeg_eoi(raw_bytes)
+        base_bytes = raw_bytes[: eoi_index + 2]
+        _, canonical_bytes = build_carrier("jpeg", base_bytes, stripped_manifest, parsed.payload)
+    elif parsed.carrier_profile == TXT_PROFILE:
+        encoding = parsed.text_encoding or "utf-8"
+        text = raw_bytes.decode(encoding)
+        # build_txt_carrier always prepends "\n\n\n" before TXT_BEGIN_MARKER.
+        # Split on the marker to get that prefix, then strip those 3 characters
+        # to recover the original base text exactly.
+        prefix = text.split(TXT_BEGIN_MARKER, 1)[0]
+        base_text = prefix[:-3] if len(prefix) >= 3 else prefix
+        canonical_bytes = build_txt_carrier(base_text, stripped_manifest, parsed.payload, encoding)
+    else:
+        raise CarrierError(f"Cannot compute canonical digest for profile: {parsed.carrier_profile!r}")
+
+    return sha256_bytes(canonical_bytes)
 
 
 def parse_carrier(path: Path) -> ParsedCarrier:

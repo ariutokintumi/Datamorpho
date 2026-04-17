@@ -1,0 +1,41 @@
+{
+  "datamorpho_version": "0.001",
+  "object_type": "reconstruction",
+  "reconstruction_id": "reconstruction-774a8e6fae4e438fb997b0b6e39ddc29",
+  "state_id": "state-3",
+  "carrier_profile": "txt-envelope",
+  "created_at": "2026-04-17T07:38:49Z",
+  "layout_strategy": "sparse-with-chaff",
+  "reassembly": "concat-by-order",
+  "suite_profile": "simple",
+  "suites_used": [
+    "AES-256-GCM"
+  ],
+  "carrier_file_digest": {
+    "algorithm": "sha256",
+    "value": "N29eFBabmEqe-5RxB7KdMP2PPRtS6PYixvxB_9wEwDw"
+  },
+  "state_filename": "4.txt",
+  "state_media_type": "text/plain",
+  "original_file": {
+    "filename": "4.txt",
+    "size_bytes": 3
+  },
+  "state_key_material": null,
+  "fragments": [
+    {
+      "fragment_id": "state-3-fragment-1",
+      "payload_region": "main",
+      "order": 1,
+      "crypto_suite": "AES-256-GCM",
+      "iv_b64url": "MT4hup6kwwUpvUIW",
+      "key_material": {
+        "format": "raw",
+        "encoding": "base64url",
+        "value": "aNwVlTlQIMHVNnXfpvuVkMItLNymVYf3oc7auCMufrQ"
+      },
+      "offset": 4316,
+      "length": 19
+    }
+  ]
+}

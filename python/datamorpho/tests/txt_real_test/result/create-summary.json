@@ -1,0 +1,19 @@
+{
+  "carrier_input": "python\\datamorpho\\tests\\txt_real_test\\1.txt",
+  "carrier_output": "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\1.datamorpho.txt",
+  "carrier_profile": "txt-envelope",
+  "suite_profile": "simple",
+  "layout_strategy": "sparse-with-chaff",
+  "carrier_output_sha256": "N29eFBabmEqe-5RxB7KdMP2PPRtS6PYixvxB_9wEwDw",
+  "public_manifest": "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\1.public-manifest.json",
+  "reconstruction_objects": [
+    "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\reconstruction-state-1.json",
+    "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\reconstruction-state-2.json",
+    "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\reconstruction-state-3.json"
+  ],
+  "state_count": 3,
+  "limits": {
+    "max_file_size_bytes": 5242880,
+    "max_states": 5
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "datamorpho_version": "0.001",
+  "object_type": "reconstruction",
+  "reconstruction_id": "reconstruction-f2799b5557214bc58793f6c5cadd83cd",
+  "state_id": "state-1",
+  "carrier_profile": "txt-envelope",
+  "created_at": "2026-04-17T07:38:49Z",
+  "layout_strategy": "sparse-with-chaff",
+  "reassembly": "concat-by-order",
+  "suite_profile": "simple",
+  "suites_used": [
+    "AES-256-CTR+HMAC-SHA-256",
+    "AES-256-GCM"
+  ],
+  "carrier_file_digest": {
+    "algorithm": "sha256",
+    "value": "N29eFBabmEqe-5RxB7KdMP2PPRtS6PYixvxB_9wEwDw"
+  },
+  "state_filename": "2.txt",
+  "state_media_type": "text/plain",
+  "original_file": {
+    "filename": "2.txt",
+    "size_bytes": 3810
+  },
+  "state_key_material": null,
+  "fragments": [
+    {
+      "fragment_id": "state-1-fragment-1",
+      "payload_region": "main",
+      "order": 1,
+      "crypto_suite": "AES-256-GCM",
+      "iv_b64url": "l52LVAPcty1uBEcY",
+      "key_material": {
+        "format": "raw",
+        "encoding": "base64url",
+        "value": "ew02X00MOzyU8jAb1pFiW23Ik5zXddY-fuXAKNe7mLo"
+      },
+      "offset": 4416,
+      "length": 1427
+    },
+    {
+      "fragment_id": "state-1-fragment-2",
+      "payload_region": "main",
+      "order": 2,
+      "crypto_suite": "AES-256-CTR+HMAC-SHA-256",
+      "iv_b64url": "4bdzUgKYcp3BHfuBaZIEdQ",
+      "key_material": {
+        "format": "suite-defined",
+        "encoding": "base64url",
+        "value": "eyJlbmNfa2V5Ijoid29BLUJ5WFQ3R2RoOVUzbW1pZ05TZVpLaVMtUEhES2RFNTBmSVBLMHdiayIsIm1hY19rZXkiOiIwbjg2XzBfdUhMWlVxMVVVbkxabW1Ud2d2WUtzdVI0WmNBYXZGWll5R1Y4IiwidGFnIjoiUDJVMU9KRXVUTkROLUo2aUM1QUJ4NXhSYWtTaEJTS2gwTGE4Y3hoMUM3QSJ9"
+      },
+      "offset": 1060,
+      "length": 1058
+    },
+    {
+      "fragment_id": "state-1-fragment-3",
+      "payload_region": "main",
+      "order": 3,
+      "crypto_suite": "AES-256-CTR+HMAC-SHA-256",
+      "iv_b64url": "h78yALgSL08a-YJGpJ7xTQ",
+      "key_material": {
+        "format": "suite-defined",
+        "encoding": "base64url",
+        "value": "eyJlbmNfa2V5IjoiRXgzaUItdUVnamhzWXRYMl8td3VIdEpMeXpZdFR6bHN4S3QtWVRnNHo1QSIsIm1hY19rZXkiOiJTbmNwdFdyZDBndExvSGEtT1ZVVkhQUk0zVE9jc0w4RHJlVDg4cHFQWE5rIiwidGFnIjoidXhyZEx1OVZ0dDAyNmFiMDFvdjdzamxpd2NacHZybHJ3MFpYUUpkZ1pXUSJ9"
+      },
+      "offset": 2217,
+      "length": 251
+    },
+    {
+      "fragment_id": "state-1-fragment-4",
+      "payload_region": "main",
+      "order": 4,
+      "crypto_suite": "AES-256-GCM",
+      "iv_b64url": "2uax8LMRH_3p-koi",
+      "key_material": {
+        "format": "raw",
+        "encoding": "base64url",
+        "value": "drd1m098cecP1ZFPwDcpt9ljxBcLDlEytEO7GeVJNN8"
+      },
+      "offset": 2505,
+      "length": 106
+    },
+    {
+      "fragment_id": "state-1-fragment-5",
+      "payload_region": "main",
+      "order": 5,
+      "crypto_suite": "AES-256-CTR+HMAC-SHA-256",
+      "iv_b64url": "v5cq36stUjEm2TubU68EGw",
+      "key_material": {
+        "format": "suite-defined",
+        "encoding": "base64url",
+        "value": "eyJlbmNfa2V5IjoiS09ia3NVdWdMdm9fRGQ3UFJYOXpLUDdBU3V4U1lOajYtZDFrZ3ZHYk43dyIsIm1hY19rZXkiOiJzVnlZTTJiUWlFZ25KeXUzSE1wMHpsRlhWb2dDU3hQZWs3MjFIY3RJVm1RIiwidGFnIjoicFBtTW1JbzRCMThmYzFUTHBEQnk3NnRHSHdtbXpIX2NoTjhDX055cE1jMCJ9"
+      },
+      "offset": 0,
+      "length": 1000
+    }
+  ]
+}

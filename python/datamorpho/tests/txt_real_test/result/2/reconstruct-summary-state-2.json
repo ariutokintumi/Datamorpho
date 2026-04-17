@@ -1,0 +1,8 @@
+{
+  "carrier_input": "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\2\\1.datamorpho.txt",
+  "reconstruction_object": "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\2\\reconstruction-state-2.json",
+  "state_id": "state-2",
+  "output_path": "D:\\Desarrollos & Proyectos\\Datamorpho\\Repo\\Datamorpho\\python\\datamorpho\\tests\\txt_real_test\\result\\2\\3.txt",
+  "output_sha256": "YVoYbdJr5eUKS3ZKHXCEVx-qcl6a7nqhoWGIIUbVOqM",
+  "output_size_bytes": 1600
+}

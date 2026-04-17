@@ -1,0 +1,89 @@
+{
+  "datamorpho_version": "0.001",
+  "manifest_type": "public",
+  "carrier": "txt",
+  "profile": "txt-envelope",
+  "layout_strategy": "sparse-with-chaff",
+  "created_at": "2026-04-17T07:38:49Z",
+  "x-demo_scope": {
+    "supported_carriers": [
+      "jpeg",
+      "txt"
+    ],
+    "notes": [
+      "This first public demo implementation supports JPEG and TXT only.",
+      "The protocol specification may define additional profiles outside this demo implementation."
+    ]
+  },
+  "states": [
+    {
+      "state_id": "state-1",
+      "state_filename": "2.txt",
+      "state_media_type": "text/plain",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "type": "custom",
+          "value": "manual-release",
+          "description": "Demo release when the matching reconstruction object is provided."
+        }
+      ],
+      "morphostorage": [
+        {
+          "type": "text",
+          "value": "unknown"
+        }
+      ],
+      "reconstruction_digest": {
+        "algorithm": "sha256",
+        "value": "JCm86HZXBL8MNIz63uRW3k1ugdYUk82UuvGv5bN3Yh4"
+      }
+    },
+    {
+      "state_id": "state-2",
+      "state_filename": "3.txt",
+      "state_media_type": "text/plain",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "type": "custom",
+          "value": "manual-release",
+          "description": "Demo release when the matching reconstruction object is provided."
+        }
+      ],
+      "morphostorage": [
+        {
+          "type": "text",
+          "value": "unknown"
+        }
+      ],
+      "reconstruction_digest": {
+        "algorithm": "sha256",
+        "value": "FU5_aKSdQujrK9ind4sf8wPOgS7vCmEiM7LVWxxreOc"
+      }
+    },
+    {
+      "state_id": "state-3",
+      "state_filename": "4.txt",
+      "state_media_type": "text/plain",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "type": "custom",
+          "value": "manual-release",
+          "description": "Demo release when the matching reconstruction object is provided."
+        }
+      ],
+      "morphostorage": [
+        {
+          "type": "text",
+          "value": "unknown"
+        }
+      ],
+      "reconstruction_digest": {
+        "algorithm": "sha256",
+        "value": "wQYPEfOZqb_6T8gBD6F8Se2KgLINFYDsyCRebQGgs0k"
+      }
+    }
+  ]
+}
